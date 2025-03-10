@@ -1,0 +1,278 @@
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" routerLink="/customer">CarWash</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/account">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Customer Content -->
+    <div class="container">
+        <h2>Welcome, {{customerName}}</h2>
+    
+        <h3>Your Car Details</h3>
+
+
+
+
+        <button class="btn btn-primary" (click)="openModal()">Add Car</button>
+
+<!-- Bootstrap Modal for Adding a Car -->
+<div class="modal fade" id="addCarModal" tabindex="-1" aria-labelledby="addCarModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addCarModalLabel">Add New Car</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form" (ngSubmit)="onAddCar()">
+          <div class="mb-3">
+            <label for="company" class="form-label">Car Company</label>
+            <input type="text" id="company" class="form-control" [formControl]="form.controls.company">
+            <div *ngIf="form.controls.company.touched && form.controls.company.invalid" class="text-danger">
+              <small *ngIf="form.controls.company.errors?.['required']">Please Enter the Car Company</small>
+            </div>
+
+          </div>
+          <div class="mb-3">
+            <label for="model" class="form-label">Car Model</label>
+            <input type="text" id="model" class="form-control" [formControl]="form.controls.model">
+            <div *ngIf="form.controls.model.touched && form.controls.model.invalid" class="text-danger">
+              <small *ngIf="form.controls.model.errors?.['required']">Please Enter the Model Number</small>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="number" class="form-label">Car Number</label>
+            <input type="text" id="number" class="form-control" [formControl]="form.controls.number">
+            
+            <div *ngIf="form.controls.number.touched && form.controls.number.invalid" class="text-danger">
+              <small *ngIf="form.controls.number.errors?.['required']">Please Enter the Car Number</small>
+            </div>
+            
+          </div>
+          <button type="submit" class="btn btn-success" [disabled]="form.invalid">Save Car</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+            
+
+
+
+
+        <div class="car-grid">
+            @if (carDetails.length > 0) {
+                @for (car of carDetails; track car.number) {
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ car.company }} {{ car.model }}</h5>
+                            <p class="card-text">Number: {{ car.number }}</p>
+                            <button class="btn btn-danger" (click)="deleteCar(car.id)">Delete</button>
+
+                            
+                            
+                        </div>
+                    </div>
+                }
+            } @else {
+                <p class="no-cars">You have no car details available.</p>
+            }
+        </div>
+    </div>
+
+
+    <h3 class="washer-h3">Select a Washer</h3>
+        <div class="washer-grid" *ngIf="washerss.length >0; else noWashers">
+            <div class="washer-card" *ngFor="let washer of washerss">
+                <h4>{{ washer.user.name }}</h4>
+                <p>Email: {{ washer.user.email }}</p>
+                <p>Mobile: {{ washer.user.mobileNumber }}</p>
+                <button class="btn btn-primary" (click)="openPackageModal(washer.userId)">Select Washer</button>
+            </div>
+        </div>
+
+        <ng-template #noWashers>
+          <p class="text-center text-danger">No washers available in your city. Please try another city.</p>
+        </ng-template>
+
+
+
+    
+        <div class="modal fade" id="selectPackageModal" tabindex="-1" aria-labelledby="selectPackageModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="selectPackageModalLabel">Select Car and Package</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form [formGroup]="packageForm">
+                    <div class="mb-3">
+
+                      <label for="packageSelect" class="form-label">Choose a Car</label>
+                      <select id="packageSelect" class="form-select" formControlName="selectedCar" (change)="updateCarDetails()">
+                        <option *ngFor="let car of carDetails" [value]="car.id">
+                          {{ car.model }} - {{ car.number }}
+                          
+                        </option>
+                      </select>
+                      
+                      <div *ngIf="selectedCarDetails" class="mt-3">
+                        <h6>Car Details:</h6>
+                        <p><strong>Company:</strong> {{ selectedCarDetails.company }}</p>
+                        <p><strong>Model:</strong> {{ selectedCarDetails.model }} </p>
+                        <p><strong>Number:</strong> {{ selectedCarDetails.number }} </p>
+                      </div>
+                    <div>
+                      <small *ngIf="packageForm.controls['selectedCar'].invalid && packageForm.controls['selectedCar'].touched" class="text-danger">
+                        Please select a car.
+                      </small>
+                    </div>
+
+                      <label for="packageSelect" class="form-label">Choose a Package</label>
+                      <select id="packageSelect" class="form-select" formControlName="selectedPackage" (change)="updatePackageDetails()">
+                        <option *ngFor="let pack of packages" [value]="pack.id">
+                          {{ pack.packName }} - ₹{{ pack.packPrice }}
+                        </option>
+                      </select>
+                      
+                      <div *ngIf="isPromoCodeAvailable" class="mt-3">
+                        <label for="promoCodeSelect" class="form-label">Apply Promo Code</label>
+                        <select id="promoCodeSelect" class="form-select" formControlName="selectedPromoCode">
+                          <option value="">-- Select a Promo Code --</option>
+                          <option *ngFor="let promo of eligiblePromoCodes" [value]="promo.id">
+                            {{ promo.promo }} - {{ promo.discount }}% off (Min: ₹{{ promo.minVal }})
+                          </option>
+                        </select>
+                      </div>
+
+                    </div>
+                    
+                  <div>
+                    <small *ngIf="packageForm.controls['selectedPackage'].invalid && packageForm.controls['selectedPackage'].touched" class="text-danger">
+                      Please select a package.
+                    </small>
+                  </div>
+                    
+          
+                    <div *ngIf="selectedPackageDetails" class="mt-3">
+                      <h6>Package Details:</h6>
+                      <p><strong>Description:</strong> {{ selectedPackageDetails.description }}</p>
+                      <p><strong>Duration:</strong> {{ selectedPackageDetails.duration }} mins</p>
+                    </div>
+
+                    <label for="dateSelect" class="form-label">Select Pickup Date</label>
+                    <input type="date" class="onlyfordate" id="dateSelect" formControlName="deliveryDate"/>
+                    
+                    <div>
+                      <small *ngIf="packageForm.controls['deliveryDate'].invalid && packageForm.controls['deliveryDate'].touched" class="text-danger">
+                        Please select a pickup date.
+                      </small>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="washType" class="form-label">Wash Type</label>
+                      <input type="text" id="washType" class="form-control" formControlName="washType">
+                      <small *ngIf="packageForm.controls['washType'].invalid && packageForm.controls['washType'].touched" class="text-danger">
+                        Wash type is required.
+                      </small>
+                    </div>
+                    
+                    <!-- Notes Input -->
+                    <div class="mb-3">
+                      <label for="notes" class="form-label">Notes</label>
+                      <textarea id="notes" class="form-control" formControlName="notes" rows="3"></textarea>
+                      <small *ngIf="packageForm.controls['notes'].invalid && packageForm.controls['notes'].touched" class="text-danger">
+                        Note is required.
+                      </small>
+                    </div>
+                    <button type="button" class="btn btn-success mt-3" (click)="requestPackage()">Request</button>
+                    
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <h3 id="wash-requests-title">Your Wash Requests</h3>
+<div *ngIf="washRequests.length > 0; else noRequests">
+    <div class="wash-request-grid">
+        <div class="cardwashreq" *ngFor="let request of washRequests">
+            <div class="card-body">
+                <h5 class="card-title">Washer: {{ request.washerName }}</h5>                        
+                <p><strong>Deliver Date:</strong> {{ request.deliveryDate | date }}</p>
+                <p><strong>Wash Type:</strong> {{ request.washType }}</p>
+                <p><strong>Notes:</strong> {{ request.notes }}</p>
+                <p><strong>Status:</strong> 
+                    <span class="status-badge" 
+                        [ngClass]="{'pending': request.status === 'Pending', 
+                                    'completed': request.status === 'Completed',
+                                    'rejected': request.status === 'Rejected'}">
+                        {{ request.status }}
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #noRequests>
+    <p class="no-requests">No wash requests found.</p>
+</ng-template>
+
+          
+
+
+
+
+
+          
+          <div class="modal fade" id="addressWarningModal" tabindex="-1" aria-labelledby="addressWarningModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="addressWarningModalLabel">Address Required</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Please add your address first by clicking on 'Account' near the Logout button.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+                </div>
+              </div>
+            </div>
+          </div>   
+    
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 CarWash. All rights reserved.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+
+
+

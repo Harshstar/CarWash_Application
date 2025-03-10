@@ -1,0 +1,722 @@
+2025-03-04 17:08:42.309 +05:30 [INF] User profile is available. Using 'C:\Users\HSRIVAS9\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-04 17:08:42.648 +05:30 [INF] Now listening on: http://localhost:5007
+2025-03-04 17:08:42.656 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-04 17:08:42.658 +05:30 [INF] Hosting environment: Development
+2025-03-04 17:08:42.658 +05:30 [INF] Content root path: C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\case_study\backend
+2025-03-04 17:08:43.973 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-03-04 17:08:44.530 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 565.9991ms
+2025-03-04 17:08:44.644 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-04 17:08:44.656 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 15.4452ms
+2025-03-04 17:08:45.052 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-03-04 17:08:46.607 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1555.8722ms
+2025-03-04 17:08:59.733 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-03-04 17:08:59.763 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:08:59.771 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 38.2297ms
+2025-03-04 17:08:59.776 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 51
+2025-03-04 17:08:59.781 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:08:59.787 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-03-04 17:08:59.916 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-03-04 17:09:00.007 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-03-04 17:09:00.703 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-04 17:09:00.811 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 792.2573ms
+2025-03-04 17:09:00.812 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-03-04 17:09:00.818 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 400 null application/problem+json; charset=utf-8 1041.0822ms
+2025-03-04 17:09:06.082 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-03-04 17:09:06.090 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:06.091 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 9.0524ms
+2025-03-04 17:09:06.096 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 51
+2025-03-04 17:09:06.099 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:06.109 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-03-04 17:09:06.112 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-03-04 17:09:10.353 +05:30 [INF] Executed DbCommand (142ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-03-04 17:09:11.104 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-03-04 17:09:12.087 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__user_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+2025-03-04 17:09:12.212 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+2025-03-04 17:09:12.301 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-03-04 17:09:12.310 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 6197.6759ms
+2025-03-04 17:09:12.313 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-03-04 17:09:12.350 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 6254.0812ms
+2025-03-04 17:09:12.478 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Car/Get-Car-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:12.480 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:12.482 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Car/Get-Car-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 204 null null 3.3971ms
+2025-03-04 17:09:12.494 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Package/GetAllPackage - null null
+2025-03-04 17:09:12.495 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:12.497 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Package/GetAllPackage - 204 null null 2.3744ms
+2025-03-04 17:09:12.501 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/PromoCode/GetAllPromoCode - null null
+2025-03-04 17:09:12.502 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:12.502 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/PromoCode/GetAllPromoCode - 204 null null 1.6209ms
+2025-03-04 17:09:12.507 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/WashReq/Get-LatestWashRequest-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:12.508 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:12.509 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/WashReq/Get-LatestWashRequest-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 204 null null 1.769ms
+2025-03-04 17:09:12.511 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:12.512 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/WashReq/GetCustomerWashRequests/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:12.514 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Car/Get-Car-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:12.516 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Package/GetAllPackage - null null
+2025-03-04 17:09:12.515 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Address/Get-Address-By-userId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:12.519 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:12.520 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Address/Get-Address-By-userId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 204 null null 4.7885ms
+2025-03-04 17:09:12.522 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:12.523 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:12.525 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:12.525 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:12.528 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/WashReq/GetCustomerWashRequests/4af7a160-508d-4c92-4cdd-08dd40554b59 - 204 null null 15.651ms
+2025-03-04 17:09:12.528 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/4af7a160-508d-4c92-4cdd-08dd40554b59 - 204 null null 17.0836ms
+2025-03-04 17:09:12.539 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/WashReq/Get-LatestWashRequest-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:12.542 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:12.539 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/PromoCode/GetAllPromoCode - null null
+2025-03-04 17:09:12.539 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:12.539 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Address/Get-Address-By-userId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:12.551 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:12.552 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:12.564 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:12.728 +05:30 [INF] Executing endpoint 'carwash.Controllers.WashReqController.GetLatestWashRequestByCustIdAsync (carwash)'
+2025-03-04 17:09:12.728 +05:30 [INF] Executing endpoint 'carwash.Controllers.CarController.GetCarsByCustomerIdAsync (carwash)'
+2025-03-04 17:09:12.729 +05:30 [INF] Executing endpoint 'carwash.Controllers.AddressController.GetAddressByUserIdAsync (carwash)'
+2025-03-04 17:09:12.728 +05:30 [INF] Executing endpoint 'carwash.Controllers.PromoCodeController.GetAllPromoCodesAsync (carwash)'
+2025-03-04 17:09:12.729 +05:30 [INF] Executing endpoint 'carwash.Controllers.PackageController.GetAllPackagesAsync (carwash)'
+2025-03-04 17:09:12.729 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:12.743 +05:30 [INF] Route matched with {action = "GetAllPackages", controller = "Package"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPackagesAsync() on controller carwash.Controllers.PackageController (carwash).
+2025-03-04 17:09:12.743 +05:30 [INF] Route matched with {action = "GetAllPromoCodes", controller = "PromoCode"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPromoCodesAsync() on controller carwash.Controllers.PromoCodeController (carwash).
+2025-03-04 17:09:12.746 +05:30 [INF] Route matched with {action = "GetAddressByUserId", controller = "Address"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAddressByUserIdAsync(System.Guid) on controller carwash.Controllers.AddressController (carwash).
+2025-03-04 17:09:12.746 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:09:12.746 +05:30 [INF] Route matched with {action = "GetCarsByCustomerId", controller = "Car"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarsByCustomerIdAsync(System.Guid) on controller carwash.Controllers.CarController (carwash).
+2025-03-04 17:09:12.748 +05:30 [INF] Route matched with {action = "GetLatestWashRequestByCustId", controller = "WashReq"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLatestWashRequestByCustIdAsync(System.Guid) on controller carwash.Controllers.WashReqController (carwash).
+2025-03-04 17:09:13.094 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Description], [p].[Discount], [p].[MinVal], [p].[Promo]
+FROM [PromoCodes] AS [p]
+2025-03-04 17:09:13.121 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Description], [p].[Duration], [p].[PackName], [p].[PackPrice]
+FROM [Packages] AS [p]
+2025-03-04 17:09:13.130 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Area], [a].[City], [a].[DoorNumber], [a].[Landmark], [a].[Pincode], [a].[State], [a].[Street], [a].[UserId]
+FROM [Addresses] AS [a]
+WHERE [a].[UserId] = @__userId_0
+2025-03-04 17:09:13.214 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Backend.Models.DTO.GetDtos.PromoCodeDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-04 17:09:13.216 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Backend.Models.DTO.GetDtos.PackageDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-04 17:09:13.244 +05:30 [INF] Executed action carwash.Controllers.PackageController.GetAllPackagesAsync (carwash) in 500.6013ms
+2025-03-04 17:09:13.245 +05:30 [INF] Executed endpoint 'carwash.Controllers.PackageController.GetAllPackagesAsync (carwash)'
+2025-03-04 17:09:13.245 +05:30 [INF] Executed action carwash.Controllers.PromoCodeController.GetAllPromoCodesAsync (carwash) in 501.4604ms
+2025-03-04 17:09:13.247 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Package/GetAllPackage - 200 null application/json; charset=utf-8 730.6804ms
+2025-03-04 17:09:13.247 +05:30 [INF] Executed endpoint 'carwash.Controllers.PromoCodeController.GetAllPromoCodesAsync (carwash)'
+2025-03-04 17:09:13.250 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/PromoCode/GetAllPromoCode - 200 null application/json; charset=utf-8 710.7586ms
+2025-03-04 17:09:13.276 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/WashReq/GetCustomerWashRequests/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:13.280 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.284 +05:30 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.DTO.GetDtos.AddressDto'.
+2025-03-04 17:09:13.288 +05:30 [INF] Executing endpoint 'carwash.Controllers.WashReqController.GetCustomerWashRequests (carwash)'
+2025-03-04 17:09:13.303 +05:30 [INF] Route matched with {action = "GetCustomerWashRequests", controller = "WashReq"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerWashRequests(System.Guid) on controller carwash.Controllers.WashReqController (carwash).
+2025-03-04 17:09:13.314 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[@__customerId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number], [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+FROM [Cars] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[CustId] = [u].[Id]
+WHERE [c].[CustId] = @__customerId_0
+2025-03-04 17:09:13.328 +05:30 [INF] Executed DbCommand (91ms) [Parameters=[@__customerId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [w].[Id], [w].[AddressId], [w].[CarId], [w].[CustId], [w].[DeliveryDate], [w].[Notes], [w].[OrderedDate], [w].[PackageId], [w].[PickupDate], [w].[WashType], [w].[WasherId], [a].[Id], [a].[Area], [a].[City], [a].[DoorNumber], [a].[Landmark], [a].[Pincode], [a].[State], [a].[Street], [a].[UserId]
+FROM [WashRequests] AS [w]
+INNER JOIN [Addresses] AS [a] ON [w].[AddressId] = [a].[Id]
+WHERE [w].[CustId] = @__customerId_0
+ORDER BY [w].[OrderedDate] DESC
+2025-03-04 17:09:13.365 +05:30 [INF] Executed action carwash.Controllers.AddressController.GetAddressByUserIdAsync (carwash) in 618.0032ms
+2025-03-04 17:09:13.372 +05:30 [INF] Executed endpoint 'carwash.Controllers.AddressController.GetAddressByUserIdAsync (carwash)'
+2025-03-04 17:09:13.373 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Address/Get-Address-By-userId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 200 null application/json; charset=utf-8 833.8818ms
+2025-03-04 17:09:13.389 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Address/Get-Address-By-City/Mumbai - null null
+2025-03-04 17:09:13.390 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.394 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Address/Get-Address-By-City/Mumbai - 204 null null 4.8691ms
+2025-03-04 17:09:13.406 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:09:13.417 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Address/Get-Address-By-City/Mumbai - null null
+2025-03-04 17:09:13.418 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.421 +05:30 [INF] Executing endpoint 'carwash.Controllers.AddressController.GetAddressByCityAsync (carwash)'
+2025-03-04 17:09:13.436 +05:30 [INF] Route matched with {action = "GetAddressByCity", controller = "Address"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAddressByCityAsync(System.String) on controller carwash.Controllers.AddressController (carwash).
+2025-03-04 17:09:13.472 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:09:13.478 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.CarDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-04 17:09:13.485 +05:30 [INF] Executed action carwash.Controllers.CarController.GetCarsByCustomerIdAsync (carwash) in 737.6235ms
+2025-03-04 17:09:13.486 +05:30 [INF] Executed endpoint 'carwash.Controllers.CarController.GetCarsByCustomerIdAsync (carwash)'
+2025-03-04 17:09:13.487 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Car/Get-Car-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 200 null application/json; charset=utf-8 973.2338ms
+2025-03-04 17:09:13.489 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 742.0045ms
+2025-03-04 17:09:13.493 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.496 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/4af7a160-508d-4c92-4cdd-08dd40554b59 - 200 null application/json; charset=utf-8 956.5455ms
+2025-03-04 17:09:13.504 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.WashRequestDto'.
+2025-03-04 17:09:13.523 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[@__customerId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[AddressId], [w].[CarId], [w].[CustId], [w].[DeliveryDate], [w].[Notes], [w].[OrderedDate], [w].[PackageId], [w].[PickupDate], [w].[WashType], [w].[WasherId], [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number], [p].[Id], [p].[Description], [p].[Duration], [p].[PackName], [p].[PackPrice]
+FROM [WashRequests] AS [w]
+INNER JOIN [Users] AS [u] ON [w].[WasherId] = [u].[Id]
+INNER JOIN [Cars] AS [c] ON [w].[CarId] = [c].[Id]
+INNER JOIN [Packages] AS [p] ON [w].[PackageId] = [p].[Id]
+WHERE [w].[CustId] = @__customerId_0
+2025-03-04 17:09:13.604 +05:30 [INF] Executed action carwash.Controllers.WashReqController.GetLatestWashRequestByCustIdAsync (carwash) in 855.3942ms
+2025-03-04 17:09:13.605 +05:30 [INF] Executed endpoint 'carwash.Controllers.WashReqController.GetLatestWashRequestByCustIdAsync (carwash)'
+2025-03-04 17:09:13.606 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/WashReq/Get-LatestWashRequest-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 200 null application/json; charset=utf-8 1066.8432ms
+2025-03-04 17:09:13.636 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Area], [a].[City], [a].[DoorNumber], [a].[Landmark], [a].[Pincode], [a].[State], [a].[Street], [a].[UserId], [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+FROM [Addresses] AS [a]
+LEFT JOIN [Users] AS [u] ON [a].[UserId] = [u].[Id]
+WHERE LOWER([a].[City]) = @__ToLower_0
+2025-03-04 17:09:13.638 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.WashRequestDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-04 17:09:13.641 +05:30 [INF] Executed action carwash.Controllers.WashReqController.GetCustomerWashRequests (carwash) in 337.0255ms
+2025-03-04 17:09:13.642 +05:30 [INF] Executed endpoint 'carwash.Controllers.WashReqController.GetCustomerWashRequests (carwash)'
+2025-03-04 17:09:13.643 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/WashReq/GetCustomerWashRequests/4af7a160-508d-4c92-4cdd-08dd40554b59 - 200 null application/json; charset=utf-8 370.9898ms
+2025-03-04 17:09:13.666 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Backend.Models.DTO.GetDtos.AddressDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-04 17:09:13.672 +05:30 [INF] Executed action carwash.Controllers.AddressController.GetAddressByCityAsync (carwash) in 235.7176ms
+2025-03-04 17:09:13.673 +05:30 [INF] Executed endpoint 'carwash.Controllers.AddressController.GetAddressByCityAsync (carwash)'
+2025-03-04 17:09:13.681 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Address/Get-Address-By-City/Mumbai - 200 null application/json; charset=utf-8 264.3113ms
+2025-03-04 17:09:13.703 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - null null
+2025-03-04 17:09:13.703 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - null null
+2025-03-04 17:09:13.705 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.714 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.714 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - 204 null null 11.7021ms
+2025-03-04 17:09:13.715 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:09:13.719 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.720 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 204 null null 5.3386ms
+2025-03-04 17:09:13.717 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/0fa5b00b-0f5d-4712-4ce0-08dd40554b59 - null null
+2025-03-04 17:09:13.716 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - 204 null null 13.8215ms
+2025-03-04 17:09:13.717 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:09:13.723 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:09:13.731 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.733 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.733 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.734 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 204 null null 16.6931ms
+2025-03-04 17:09:13.733 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:09:13.734 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/0fa5b00b-0f5d-4712-4ce0-08dd40554b59 - 204 null null 17.3307ms
+2025-03-04 17:09:13.734 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 204 null null 11.298ms
+2025-03-04 17:09:13.734 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/78ceb185-6c97-4d5a-4cdf-08dd40554b59 - null null
+2025-03-04 17:09:13.743 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.744 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/78ceb185-6c97-4d5a-4cdf-08dd40554b59 - 204 null null 9.3749ms
+2025-03-04 17:09:13.754 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - null null
+2025-03-04 17:09:13.735 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.756 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.758 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 204 null null 24.5932ms
+2025-03-04 17:09:13.761 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - null null
+2025-03-04 17:09:13.762 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:09:13.770 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.766 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/78ceb185-6c97-4d5a-4cdf-08dd40554b59 - null null
+2025-03-04 17:09:13.771 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.767 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.772 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:09:13.778 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.779 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:09:13.771 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - 204 null null 10.0163ms
+2025-03-04 17:09:13.771 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.787 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.787 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:09:13.793 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/0fa5b00b-0f5d-4712-4ce0-08dd40554b59 - null null
+2025-03-04 17:09:13.800 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.802 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.802 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:09:13.804 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:09:13.815 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:09:13.817 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 44.54ms
+2025-03-04 17:09:13.817 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:09:13.818 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.819 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - 200 null application/json; charset=utf-8 64.2438ms
+2025-03-04 17:09:13.819 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:09:13.819 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:09:13.820 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 38.42ms
+2025-03-04 17:09:13.820 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.820 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:09:13.821 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 200 null application/json; charset=utf-8 58.9952ms
+2025-03-04 17:09:13.821 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 33.4325ms
+2025-03-04 17:09:13.821 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:09:13.822 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.822 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/78ceb185-6c97-4d5a-4cdf-08dd40554b59 - 200 null application/json; charset=utf-8 55.8742ms
+2025-03-04 17:09:13.823 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:09:13.825 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 22.5687ms
+2025-03-04 17:09:13.826 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.827 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/0fa5b00b-0f5d-4712-4ce0-08dd40554b59 - 200 null application/json; charset=utf-8 34.1687ms
+2025-03-04 17:09:13.829 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - null null
+2025-03-04 17:09:13.830 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.832 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.832 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:09:13.834 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:09:13.848 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.849 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:09:13.850 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.850 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:09:13.851 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:09:13.860 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:09:13.861 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 27.9814ms
+2025-03-04 17:09:13.861 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.862 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - 200 null application/json; charset=utf-8 32.9872ms
+2025-03-04 17:09:13.863 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:09:13.867 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 16.9567ms
+2025-03-04 17:09:13.868 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.869 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 200 null application/json; charset=utf-8 35.1726ms
+2025-03-04 17:09:13.869 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - null null
+2025-03-04 17:09:13.870 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.872 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.874 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:09:13.874 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:09:13.881 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.882 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.883 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:09:13.887 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:09:13.889 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:09:13.893 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 18.3108ms
+2025-03-04 17:09:13.894 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.894 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:09:13.895 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - 200 null application/json; charset=utf-8 25.2941ms
+2025-03-04 17:09:13.896 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:09:13.897 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 12.9047ms
+2025-03-04 17:09:13.898 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.899 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 200 null application/json; charset=utf-8 25.9275ms
+2025-03-04 17:09:13.903 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:09:13.904 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:13.905 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.906 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:09:13.918 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:09:13.920 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:09:13.922 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 14.2342ms
+2025-03-04 17:09:13.922 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:13.923 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 200 null application/json; charset=utf-8 20.1341ms
+2025-03-04 17:09:56.613 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:56.613 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Address/Get-Address-By-userId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:56.615 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:56.615 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:56.617 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/4af7a160-508d-4c92-4cdd-08dd40554b59 - 204 null null 4.0123ms
+2025-03-04 17:09:56.617 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Address/Get-Address-By-userId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 204 null null 3.6525ms
+2025-03-04 17:09:56.627 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:56.630 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:56.631 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Address/Get-Address-By-userId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:09:56.633 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:09:56.635 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:56.636 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:09:56.637 +05:30 [INF] Executing endpoint 'carwash.Controllers.AddressController.GetAddressByUserIdAsync (carwash)'
+2025-03-04 17:09:56.642 +05:30 [INF] Route matched with {action = "GetAddressByUserId", controller = "Address"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAddressByUserIdAsync(System.Guid) on controller carwash.Controllers.AddressController (carwash).
+2025-03-04 17:09:56.667 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Area], [a].[City], [a].[DoorNumber], [a].[Landmark], [a].[Pincode], [a].[State], [a].[Street], [a].[UserId]
+FROM [Addresses] AS [a]
+WHERE [a].[UserId] = @__userId_0
+2025-03-04 17:09:56.670 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:09:56.677 +05:30 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.DTO.GetDtos.AddressDto'.
+2025-03-04 17:09:56.678 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:09:56.680 +05:30 [INF] Executed action carwash.Controllers.AddressController.GetAddressByUserIdAsync (carwash) in 35.3742ms
+2025-03-04 17:09:56.680 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 43.711ms
+2025-03-04 17:09:56.683 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:09:56.683 +05:30 [INF] Executed endpoint 'carwash.Controllers.AddressController.GetAddressByUserIdAsync (carwash)'
+2025-03-04 17:09:56.684 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/4af7a160-508d-4c92-4cdd-08dd40554b59 - 200 null application/json; charset=utf-8 57.0699ms
+2025-03-04 17:09:56.685 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Address/Get-Address-By-userId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 200 null application/json; charset=utf-8 53.2953ms
+2025-03-04 17:10:02.263 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Car/Get-Car-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:10:02.268 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.271 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Package/GetAllPackage - null null
+2025-03-04 17:10:02.272 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/PromoCode/GetAllPromoCode - null null
+2025-03-04 17:10:02.272 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.272 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.272 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Car/Get-Car-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 204 null null 9.2925ms
+2025-03-04 17:10:02.272 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Package/GetAllPackage - 204 null null 1.2265ms
+2025-03-04 17:10:02.273 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/PromoCode/GetAllPromoCode - 204 null null 1.0191ms
+2025-03-04 17:10:02.274 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/WashReq/Get-LatestWashRequest-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:10:02.281 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.274 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Address/Get-Address-By-userId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:10:02.283 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/WashReq/Get-LatestWashRequest-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 204 null null 8.9748ms
+2025-03-04 17:10:02.283 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.284 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Address/Get-Address-By-userId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 204 null null 10.3158ms
+2025-03-04 17:10:02.302 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/WashReq/GetCustomerWashRequests/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:10:02.302 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.303 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/WashReq/GetCustomerWashRequests/4af7a160-508d-4c92-4cdd-08dd40554b59 - 204 null null 1.3607ms
+2025-03-04 17:10:02.306 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:10:02.307 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.309 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/4af7a160-508d-4c92-4cdd-08dd40554b59 - 204 null null 3.2943ms
+2025-03-04 17:10:02.311 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/PromoCode/GetAllPromoCode - null null
+2025-03-04 17:10:02.312 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.315 +05:30 [INF] Executing endpoint 'carwash.Controllers.PromoCodeController.GetAllPromoCodesAsync (carwash)'
+2025-03-04 17:10:02.316 +05:30 [INF] Route matched with {action = "GetAllPromoCodes", controller = "PromoCode"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPromoCodesAsync() on controller carwash.Controllers.PromoCodeController (carwash).
+2025-03-04 17:10:02.320 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Package/GetAllPackage - null null
+2025-03-04 17:10:02.322 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.324 +05:30 [INF] Executing endpoint 'carwash.Controllers.PackageController.GetAllPackagesAsync (carwash)'
+2025-03-04 17:10:02.326 +05:30 [INF] Route matched with {action = "GetAllPackages", controller = "Package"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPackagesAsync() on controller carwash.Controllers.PackageController (carwash).
+2025-03-04 17:10:02.326 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Car/Get-Car-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:10:02.333 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.336 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/WashReq/Get-LatestWashRequest-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:10:02.336 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Address/Get-Address-By-userId/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:10:02.337 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.337 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.338 +05:30 [INF] Executing endpoint 'carwash.Controllers.WashReqController.GetLatestWashRequestByCustIdAsync (carwash)'
+2025-03-04 17:10:02.339 +05:30 [INF] Route matched with {action = "GetLatestWashRequestByCustId", controller = "WashReq"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLatestWashRequestByCustIdAsync(System.Guid) on controller carwash.Controllers.WashReqController (carwash).
+2025-03-04 17:10:02.340 +05:30 [INF] Executing endpoint 'carwash.Controllers.AddressController.GetAddressByUserIdAsync (carwash)'
+2025-03-04 17:10:02.341 +05:30 [INF] Route matched with {action = "GetAddressByUserId", controller = "Address"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAddressByUserIdAsync(System.Guid) on controller carwash.Controllers.AddressController (carwash).
+2025-03-04 17:10:02.347 +05:30 [INF] Executing endpoint 'carwash.Controllers.CarController.GetCarsByCustomerIdAsync (carwash)'
+2025-03-04 17:10:02.348 +05:30 [INF] Route matched with {action = "GetCarsByCustomerId", controller = "Car"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarsByCustomerIdAsync(System.Guid) on controller carwash.Controllers.CarController (carwash).
+2025-03-04 17:10:02.365 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Area], [a].[City], [a].[DoorNumber], [a].[Landmark], [a].[Pincode], [a].[State], [a].[Street], [a].[UserId]
+FROM [Addresses] AS [a]
+WHERE [a].[UserId] = @__userId_0
+2025-03-04 17:10:02.367 +05:30 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.DTO.GetDtos.AddressDto'.
+2025-03-04 17:10:02.368 +05:30 [INF] Executed action carwash.Controllers.AddressController.GetAddressByUserIdAsync (carwash) in 26.3009ms
+2025-03-04 17:10:02.368 +05:30 [INF] Executed endpoint 'carwash.Controllers.AddressController.GetAddressByUserIdAsync (carwash)'
+2025-03-04 17:10:02.370 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Address/Get-Address-By-userId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 200 null application/json; charset=utf-8 32.6863ms
+2025-03-04 17:10:02.371 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Description], [p].[Discount], [p].[MinVal], [p].[Promo]
+FROM [PromoCodes] AS [p]
+2025-03-04 17:10:02.373 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Backend.Models.DTO.GetDtos.PromoCodeDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-04 17:10:02.374 +05:30 [INF] Executed action carwash.Controllers.PromoCodeController.GetAllPromoCodesAsync (carwash) in 56.6947ms
+2025-03-04 17:10:02.374 +05:30 [INF] Executed endpoint 'carwash.Controllers.PromoCodeController.GetAllPromoCodesAsync (carwash)'
+2025-03-04 17:10:02.373 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/WashReq/GetCustomerWashRequests/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:10:02.375 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/PromoCode/GetAllPromoCode - 200 null application/json; charset=utf-8 64.1292ms
+2025-03-04 17:10:02.376 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.380 +05:30 [INF] Executing endpoint 'carwash.Controllers.WashReqController.GetCustomerWashRequests (carwash)'
+2025-03-04 17:10:02.381 +05:30 [INF] Route matched with {action = "GetCustomerWashRequests", controller = "WashReq"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerWashRequests(System.Guid) on controller carwash.Controllers.WashReqController (carwash).
+2025-03-04 17:10:02.387 +05:30 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Description], [p].[Duration], [p].[PackName], [p].[PackPrice]
+FROM [Packages] AS [p]
+2025-03-04 17:10:02.393 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[@__customerId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [w].[Id], [w].[AddressId], [w].[CarId], [w].[CustId], [w].[DeliveryDate], [w].[Notes], [w].[OrderedDate], [w].[PackageId], [w].[PickupDate], [w].[WashType], [w].[WasherId], [a].[Id], [a].[Area], [a].[City], [a].[DoorNumber], [a].[Landmark], [a].[Pincode], [a].[State], [a].[Street], [a].[UserId]
+FROM [WashRequests] AS [w]
+INNER JOIN [Addresses] AS [a] ON [w].[AddressId] = [a].[Id]
+WHERE [w].[CustId] = @__customerId_0
+ORDER BY [w].[OrderedDate] DESC
+2025-03-04 17:10:02.393 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Backend.Models.DTO.GetDtos.PackageDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-04 17:10:02.398 +05:30 [INF] Executed action carwash.Controllers.PackageController.GetAllPackagesAsync (carwash) in 71.2259ms
+2025-03-04 17:10:02.398 +05:30 [INF] Executed endpoint 'carwash.Controllers.PackageController.GetAllPackagesAsync (carwash)'
+2025-03-04 17:10:02.399 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.WashRequestDto'.
+2025-03-04 17:10:02.399 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Package/GetAllPackage - 200 null application/json; charset=utf-8 78.7155ms
+2025-03-04 17:10:02.400 +05:30 [INF] Executed action carwash.Controllers.WashReqController.GetLatestWashRequestByCustIdAsync (carwash) in 61.0212ms
+2025-03-04 17:10:02.401 +05:30 [INF] Executed endpoint 'carwash.Controllers.WashReqController.GetLatestWashRequestByCustIdAsync (carwash)'
+2025-03-04 17:10:02.407 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/WashReq/Get-LatestWashRequest-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 200 null application/json; charset=utf-8 71.335ms
+2025-03-04 17:10:02.408 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Address/Get-Address-By-City/Mumbai - null null
+2025-03-04 17:10:02.408 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/4af7a160-508d-4c92-4cdd-08dd40554b59 - null null
+2025-03-04 17:10:02.409 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.410 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.411 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.412 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:10:02.415 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Address/Get-Address-By-City/Mumbai - 204 null null 6.9479ms
+2025-03-04 17:10:02.422 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Address/Get-Address-By-City/Mumbai - null null
+2025-03-04 17:10:02.423 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.429 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[@__customerId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number], [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+FROM [Cars] AS [c]
+INNER JOIN [Users] AS [u] ON [c].[CustId] = [u].[Id]
+WHERE [c].[CustId] = @__customerId_0
+2025-03-04 17:10:02.433 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.CarDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-04 17:10:02.435 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[@__customerId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[AddressId], [w].[CarId], [w].[CustId], [w].[DeliveryDate], [w].[Notes], [w].[OrderedDate], [w].[PackageId], [w].[PickupDate], [w].[WashType], [w].[WasherId], [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number], [p].[Id], [p].[Description], [p].[Duration], [p].[PackName], [p].[PackPrice]
+FROM [WashRequests] AS [w]
+INNER JOIN [Users] AS [u] ON [w].[WasherId] = [u].[Id]
+INNER JOIN [Cars] AS [c] ON [w].[CarId] = [c].[Id]
+INNER JOIN [Packages] AS [p] ON [w].[PackageId] = [p].[Id]
+WHERE [w].[CustId] = @__customerId_0
+2025-03-04 17:10:02.438 +05:30 [INF] Executed action carwash.Controllers.CarController.GetCarsByCustomerIdAsync (carwash) in 88.7769ms
+2025-03-04 17:10:02.434 +05:30 [INF] Executing endpoint 'carwash.Controllers.AddressController.GetAddressByCityAsync (carwash)'
+2025-03-04 17:10:02.439 +05:30 [INF] Executed endpoint 'carwash.Controllers.CarController.GetCarsByCustomerIdAsync (carwash)'
+2025-03-04 17:10:02.439 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Car/Get-Car-By-CustId/4af7a160-508d-4c92-4cdd-08dd40554b59 - 200 null application/json; charset=utf-8 116.5001ms
+2025-03-04 17:10:02.441 +05:30 [INF] Route matched with {action = "GetAddressByCity", controller = "Address"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAddressByCityAsync(System.String) on controller carwash.Controllers.AddressController (carwash).
+2025-03-04 17:10:02.449 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.WashRequestDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-04 17:10:02.450 +05:30 [INF] Executed action carwash.Controllers.WashReqController.GetCustomerWashRequests (carwash) in 68.2909ms
+2025-03-04 17:10:02.452 +05:30 [INF] Executed endpoint 'carwash.Controllers.WashReqController.GetCustomerWashRequests (carwash)'
+2025-03-04 17:10:02.452 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/WashReq/GetCustomerWashRequests/4af7a160-508d-4c92-4cdd-08dd40554b59 - 200 null application/json; charset=utf-8 79.2099ms
+2025-03-04 17:10:02.454 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:10:02.457 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:10:02.458 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 45.0074ms
+2025-03-04 17:10:02.458 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.459 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/4af7a160-508d-4c92-4cdd-08dd40554b59 - 200 null application/json; charset=utf-8 50.0741ms
+2025-03-04 17:10:02.480 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Area], [a].[City], [a].[DoorNumber], [a].[Landmark], [a].[Pincode], [a].[State], [a].[Street], [a].[UserId], [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+FROM [Addresses] AS [a]
+LEFT JOIN [Users] AS [u] ON [a].[UserId] = [u].[Id]
+WHERE LOWER([a].[City]) = @__ToLower_0
+2025-03-04 17:10:02.491 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Backend.Models.DTO.GetDtos.AddressDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-04 17:10:02.504 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - null null
+2025-03-04 17:10:02.505 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.507 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - 204 null null 2.8764ms
+2025-03-04 17:10:02.509 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - null null
+2025-03-04 17:10:02.514 +05:30 [INF] Executed action carwash.Controllers.AddressController.GetAddressByCityAsync (carwash) in 72.2384ms
+2025-03-04 17:10:02.519 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - null null
+2025-03-04 17:10:02.520 +05:30 [INF] Executed endpoint 'carwash.Controllers.AddressController.GetAddressByCityAsync (carwash)'
+2025-03-04 17:10:02.521 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Address/Get-Address-By-City/Mumbai - 200 null application/json; charset=utf-8 99.4258ms
+2025-03-04 17:10:02.521 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.522 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:10:02.522 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - 204 null null 2.8034ms
+2025-03-04 17:10:02.523 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.525 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 204 null null 2.3841ms
+2025-03-04 17:10:02.523 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/0fa5b00b-0f5d-4712-4ce0-08dd40554b59 - null null
+2025-03-04 17:10:02.537 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:10:02.539 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.539 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 204 null null 2.3728ms
+2025-03-04 17:10:02.541 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:10:02.541 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.542 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 204 null null 1.3573ms
+2025-03-04 17:10:02.537 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.547 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:10:02.549 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.551 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 204 null null 4.289ms
+2025-03-04 17:10:02.554 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/78ceb185-6c97-4d5a-4cdf-08dd40554b59 - null null
+2025-03-04 17:10:02.555 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.555 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/78ceb185-6c97-4d5a-4cdf-08dd40554b59 - 204 null null 1.0102ms
+2025-03-04 17:10:02.556 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - null null
+2025-03-04 17:10:02.556 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:10:02.557 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.558 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.559 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.559 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:10:02.551 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/0fa5b00b-0f5d-4712-4ce0-08dd40554b59 - 204 null null 27.7891ms
+2025-03-04 17:10:02.559 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.566 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:10:02.569 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/0fa5b00b-0f5d-4712-4ce0-08dd40554b59 - null null
+2025-03-04 17:10:02.573 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/78ceb185-6c97-4d5a-4cdf-08dd40554b59 - null null
+2025-03-04 17:10:02.574 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.575 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.576 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:10:02.579 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.581 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.582 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:10:02.581 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:10:02.590 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:10:02.590 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:10:02.591 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:10:02.595 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:10:02.597 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:10:02.597 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 36.4064ms
+2025-03-04 17:10:02.598 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.599 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 20.3717ms
+2025-03-04 17:10:02.599 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 200 null application/json; charset=utf-8 42.6659ms
+2025-03-04 17:10:02.591 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 24.1465ms
+2025-03-04 17:10:02.599 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.600 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/78ceb185-6c97-4d5a-4cdf-08dd40554b59 - 200 null application/json; charset=utf-8 26.7415ms
+2025-03-04 17:10:02.599 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.602 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - 200 null application/json; charset=utf-8 46.0979ms
+2025-03-04 17:10:02.607 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:10:02.509 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.610 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:10:02.615 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 32.3985ms
+2025-03-04 17:10:02.616 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.616 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - null null
+2025-03-04 17:10:02.616 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/0fa5b00b-0f5d-4712-4ce0-08dd40554b59 - 200 null application/json; charset=utf-8 47.2135ms
+2025-03-04 17:10:02.619 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:10:02.619 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.621 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.623 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.623 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:10:02.624 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - 204 null null 106.4405ms
+2025-03-04 17:10:02.625 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.628 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:10:02.641 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:10:02.648 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:10:02.648 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:10:02.649 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 20.7579ms
+2025-03-04 17:10:02.650 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.651 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - 200 null application/json; charset=utf-8 34.6695ms
+2025-03-04 17:10:02.653 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:10:02.654 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 30.3882ms
+2025-03-04 17:10:02.655 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.656 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 200 null application/json; charset=utf-8 37.1624ms
+2025-03-04 17:10:02.657 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - null null
+2025-03-04 17:10:02.657 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.663 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.664 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:10:02.668 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:10:02.668 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.670 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.670 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:10:02.679 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:10:02.685 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:10:02.685 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 20.3417ms
+2025-03-04 17:10:02.686 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.686 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/06c1e084-3f48-492d-8ccb-08dd480627d2 - 200 null application/json; charset=utf-8 29.5745ms
+2025-03-04 17:10:02.695 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:10:02.700 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:10:02.701 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 30.3931ms
+2025-03-04 17:10:02.702 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.702 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 200 null application/json; charset=utf-8 34.709ms
+2025-03-04 17:10:02.708 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - null null
+2025-03-04 17:10:02.715 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:02.717 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.718 +05:30 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByIdAsync(System.Guid) on controller carwash.Controllers.UserController (carwash).
+2025-03-04 17:10:02.732 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Email], [u0].[MobileNumber], [u0].[Name], [u0].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [u0]
+LEFT JOIN [Cars] AS [c] ON [u0].[Id] = [c].[CustId]
+ORDER BY [u0].[Id]
+2025-03-04 17:10:02.733 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.UserDto'.
+2025-03-04 17:10:02.734 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUserByIdAsync (carwash) in 14.9599ms
+2025-03-04 17:10:02.735 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUserByIdAsync (carwash)'
+2025-03-04 17:10:02.736 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/Get-User-By-Id/3b14d41e-74ba-4c27-df0f-08dd563f3ddd - 200 null application/json; charset=utf-8 28.0291ms
+2025-03-04 17:10:54.143 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/WashReq/IsWasherAvailable/3b14d41e-74ba-4c27-df0f-08dd563f3ddd/2025-03-06T00:00:00.000Z - null null
+2025-03-04 17:10:54.143 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:54.144 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/WashReq/IsWasherAvailable/3b14d41e-74ba-4c27-df0f-08dd563f3ddd/2025-03-06T00:00:00.000Z - 204 null null 1.0938ms
+2025-03-04 17:10:54.151 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/WashReq/IsWasherAvailable/3b14d41e-74ba-4c27-df0f-08dd563f3ddd/2025-03-06T00:00:00.000Z - null null
+2025-03-04 17:10:54.152 +05:30 [INF] CORS policy execution successful.
+2025-03-04 17:10:54.154 +05:30 [INF] Executing endpoint 'carwash.Controllers.WashReqController.IsWasherAvailable (carwash)'
+2025-03-04 17:10:54.170 +05:30 [INF] Route matched with {action = "IsWasherAvailable", controller = "WashReq"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] IsWasherAvailable(System.Guid, System.DateTime) on controller carwash.Controllers.WashReqController (carwash).
+2025-03-04 17:10:54.256 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__washerId_0='?' (DbType = Guid), @__pickupDate_Date_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [WashRequests] AS [w]
+WHERE [w].[WasherId] = @__washerId_0 AND CONVERT(date, [w].[PickupDate]) = @__pickupDate_Date_1
+2025-03-04 17:10:54.264 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2025-03-04 17:10:54.271 +05:30 [INF] Executed action carwash.Controllers.WashReqController.IsWasherAvailable (carwash) in 100.1274ms
+2025-03-04 17:10:54.271 +05:30 [INF] Executed endpoint 'carwash.Controllers.WashReqController.IsWasherAvailable (carwash)'
+2025-03-04 17:10:54.272 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/WashReq/IsWasherAvailable/3b14d41e-74ba-4c27-df0f-08dd563f3ddd/2025-03-06T00:00:00.000Z - 200 null application/json; charset=utf-8 121.0145ms
+2025-03-04 17:34:25.018 +05:30 [INF] Application is shutting down...

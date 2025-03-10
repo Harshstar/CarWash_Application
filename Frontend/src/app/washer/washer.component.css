@@ -1,0 +1,133 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+.navbar {
+    /* background: linear-gradient(135deg, #667eea, #764ba2); */
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer; 
+}
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: white !important;
+    cursor: pointer; 
+}
+
+
+
+
+
+/* General container styling */
+/* General container styling */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Card styling */
+.card {
+    width: 100%; /* Makes sure it doesn't stretch */
+    max-width: 400px; /* Limits width */
+    height: auto; /* Adjusts height automatically */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* Prevents content overflow */
+    margin: 10px auto;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Card body */
+.card-body {
+    padding: 15px;
+    max-height: 300px; /* Limits card height */
+    overflow-y: auto; /* Enables scrolling if content is long */
+}
+
+/* Headings */
+.text-center {
+    margin-top: -10px; /* Moves heading slightly upward */
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+   /* Darker color for visibility */
+}
+
+h5 {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Address section */
+h6 {
+    font-weight: bold;
+    color: #444;
+    margin-top: 10px;
+}
+
+/* Button styling */
+.btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Flexbox for better alignment */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    /* background-color: #764ba2; */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}

@@ -1,0 +1,750 @@
+2025-01-31 11:29:44.834 +05:30 [INF] User profile is available. Using 'C:\Users\HSRIVAS9\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-31 11:29:45.163 +05:30 [INF] Now listening on: http://localhost:5007
+2025-01-31 11:29:45.172 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-31 11:29:45.173 +05:30 [INF] Hosting environment: Development
+2025-01-31 11:29:45.174 +05:30 [INF] Content root path: C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\case_study\backend
+2025-01-31 11:29:45.933 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 11:29:46.471 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 545.4439ms
+2025-01-31 11:29:46.554 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 11:29:46.603 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 49.8467ms
+2025-01-31 11:29:46.884 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 11:29:47.427 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 543.1159ms
+2025-01-31 11:30:42.026 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser - null null
+2025-01-31 11:30:42.060 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-31 11:30:42.330 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUser (carwash)'
+2025-01-31 11:30:42.551 +05:30 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser() on controller carwash.Controllers.UserController (carwash).
+2025-01-31 11:30:52.441 +05:30 [INF] Executed DbCommand (175ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM [Users] AS [u]
+LEFT JOIN [Cars] AS [c] ON [u].[Id] = [c].[CustId]
+ORDER BY [u].[Id]
+2025-01-31 11:30:53.071 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.UserDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-31 11:30:53.284 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUser (carwash) in 10720.262ms
+2025-01-31 11:30:53.287 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUser (carwash)'
+2025-01-31 11:30:53.358 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser - 200 null application/json; charset=utf-8 11331.8478ms
+2025-01-31 11:37:33.984 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 60
+2025-01-31 11:37:34.013 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 11:37:34.226 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 11:37:38.724 +05:30 [INF] Executed DbCommand (169ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 11:37:39.469 +05:30 [INF] Executed DbCommand (111ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 11:37:39.580 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 11:37:39.582 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 5355.5213ms
+2025-01-31 11:37:39.583 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 11:37:39.584 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 5601.1899ms
+2025-01-31 11:46:19.708 +05:30 [INF] Application is shutting down...
+2025-01-31 11:47:23.221 +05:30 [INF] User profile is available. Using 'C:\Users\HSRIVAS9\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-31 11:47:23.865 +05:30 [INF] Now listening on: http://localhost:5007
+2025-01-31 11:47:23.877 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-31 11:47:23.879 +05:30 [INF] Hosting environment: Development
+2025-01-31 11:47:23.880 +05:30 [INF] Content root path: C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\case_study\backend
+2025-01-31 11:47:25.645 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 11:47:27.229 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 1618.4168ms
+2025-01-31 11:47:27.410 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 11:47:27.427 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 18.4633ms
+2025-01-31 11:47:27.775 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 11:47:29.027 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1252.4287ms
+2025-01-31 11:51:52.732 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 11:51:52.764 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-31 11:51:52.882 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-01-31 11:51:52.882 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-01-31 11:51:52.883 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 405 0 null 151.0113ms
+2025-01-31 11:53:08.096 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 11:53:08.100 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 3.5905ms
+2025-01-31 11:53:18.844 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 11:53:18.848 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 11.8647ms
+2025-01-31 11:53:19.254 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 11:53:19.382 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 127.0699ms
+2025-01-31 11:54:06.818 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 11:54:06.821 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 2.3805ms
+2025-01-31 11:54:08.762 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 11:54:08.765 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 2.5711ms
+2025-01-31 11:54:09.306 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 11:54:09.312 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 34.3703ms
+2025-01-31 11:54:09.984 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 11:54:10.094 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 110.3633ms
+2025-01-31 12:04:27.123 +05:30 [INF] User profile is available. Using 'C:\Users\HSRIVAS9\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-31 12:04:27.460 +05:30 [INF] Now listening on: http://localhost:5007
+2025-01-31 12:04:27.469 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-31 12:04:27.471 +05:30 [INF] Hosting environment: Development
+2025-01-31 12:04:27.471 +05:30 [INF] Content root path: C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\case_study\backend
+2025-01-31 12:04:28.699 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:04:29.334 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 641.5075ms
+2025-01-31 12:04:29.410 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 12:04:29.419 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 11.4601ms
+2025-01-31 12:04:29.775 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 12:04:30.560 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 785.1342ms
+2025-01-31 12:05:34.037 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:05:34.043 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 5.9852ms
+2025-01-31 12:05:34.186 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 12:05:34.188 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 2.1003ms
+2025-01-31 12:05:35.040 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 12:05:35.126 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 86.008ms
+2025-01-31 12:06:45.353 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:06:45.354 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 1.1542ms
+2025-01-31 12:06:46.451 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 12:06:46.452 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.7648ms
+2025-01-31 12:06:47.310 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 12:06:47.346 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 36.3587ms
+2025-01-31 12:10:15.621 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:10:15.623 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 2.0165ms
+2025-01-31 12:10:16.210 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 12:10:16.211 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.968ms
+2025-01-31 12:10:19.091 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 12:10:19.125 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 34.3809ms
+2025-01-31 12:10:31.900 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:10:31.901 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 1.3297ms
+2025-01-31 12:10:32.613 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 12:10:32.614 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.8465ms
+2025-01-31 12:10:32.989 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 12:10:33.018 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 29.3325ms
+2025-01-31 12:11:00.425 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:11:00.428 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 2.9257ms
+2025-01-31 12:11:00.448 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:11:00.450 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 1.0896ms
+2025-01-31 12:11:00.535 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 12:11:00.535 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.6619ms
+2025-01-31 12:11:00.897 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 12:11:00.930 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 32.7ms
+2025-01-31 12:11:18.453 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:11:18.455 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 1.3684ms
+2025-01-31 12:11:18.534 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 12:11:18.534 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.3856ms
+2025-01-31 12:11:18.639 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 12:11:18.667 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 27.6722ms
+2025-01-31 12:11:38.451 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 12:11:38.476 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-31 12:11:38.530 +05:30 [ERR] dbd04460-639f-43d4-98be-2ecd55d18f6c : Attempted to invoke a deleted lambda or local function implementation. This can happen when lambda or local function is deleted while the application is running.
+System.MissingMethodException: Attempted to invoke a deleted lambda or local function implementation. This can happen when lambda or local function is deleted while the application is running.
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__4(JwtBearerOptions options)
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at carwash.Middlewares.ExceptionHandlerMiddleware.InvokeAsync(HttpContext httpContext)
+2025-01-31 12:11:38.669 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 500 null application/json; charset=utf-8 217.207ms
+2025-01-31 12:12:31.361 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:12:31.362 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 1.2476ms
+2025-01-31 12:12:31.382 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:12:31.384 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 1.2242ms
+2025-01-31 12:12:31.483 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 12:12:31.484 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.718ms
+2025-01-31 12:12:31.785 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 12:12:31.814 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.9094ms
+2025-01-31 12:13:03.158 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 12:13:03.163 +05:30 [ERR] 4a7b1015-47f4-4952-a18e-546f8a678eba : Attempted to invoke a deleted lambda or local function implementation. This can happen when lambda or local function is deleted while the application is running.
+System.MissingMethodException: Attempted to invoke a deleted lambda or local function implementation. This can happen when lambda or local function is deleted while the application is running.
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__4(JwtBearerOptions options)
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at carwash.Middlewares.ExceptionHandlerMiddleware.InvokeAsync(HttpContext httpContext)
+2025-01-31 12:13:03.172 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 500 null application/json; charset=utf-8 13.722ms
+2025-01-31 12:14:20.948 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:14:20.950 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 2.1231ms
+2025-01-31 12:14:22.079 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 12:14:22.080 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.4948ms
+2025-01-31 12:14:22.457 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 12:14:22.550 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 92.9196ms
+2025-01-31 12:14:46.802 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:14:46.804 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 1.5325ms
+2025-01-31 12:14:47.931 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:14:47.933 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 1.6731ms
+2025-01-31 12:14:52.939 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 12:14:52.940 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 1.2906ms
+2025-01-31 12:14:53.232 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 12:14:53.383 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 150.774ms
+2025-01-31 12:15:05.079 +05:30 [INF] Application is shutting down...
+2025-01-31 12:16:04.337 +05:30 [INF] User profile is available. Using 'C:\Users\HSRIVAS9\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-31 12:16:04.807 +05:30 [INF] Now listening on: http://localhost:5007
+2025-01-31 12:16:04.816 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-31 12:16:04.818 +05:30 [INF] Hosting environment: Development
+2025-01-31 12:16:04.818 +05:30 [INF] Content root path: C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\case_study\backend
+2025-01-31 12:16:06.388 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 12:16:07.126 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 753.0634ms
+2025-01-31 12:16:07.220 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 12:16:07.226 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 6.6999ms
+2025-01-31 12:16:07.554 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 12:16:08.138 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 583.9705ms
+2025-01-31 12:16:32.543 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 12:16:32.576 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:16:32.585 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 42.1957ms
+2025-01-31 12:16:32.594 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 51
+2025-01-31 12:16:32.610 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:16:32.620 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-31 12:16:32.734 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 12:16:32.829 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 12:16:38.030 +05:30 [INF] Executed DbCommand (122ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 12:16:38.949 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 12:16:39.048 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 12:16:39.100 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 6259.1741ms
+2025-01-31 12:16:39.103 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 12:16:39.140 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 6545.7946ms
+2025-01-31 12:17:56.896 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser - null null
+2025-01-31 12:17:56.905 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUser (carwash)'
+2025-01-31 12:17:56.927 +05:30 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser() on controller carwash.Controllers.UserController (carwash).
+2025-01-31 12:17:58.290 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM [Users] AS [u]
+LEFT JOIN [Cars] AS [c] ON [u].[Id] = [c].[CustId]
+ORDER BY [u].[Id]
+2025-01-31 12:17:58.563 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.UserDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-31 12:17:58.606 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUser (carwash) in 1678.3164ms
+2025-01-31 12:17:58.606 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUser (carwash)'
+2025-01-31 12:17:58.608 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser - 200 null application/json; charset=utf-8 1711.0625ms
+2025-01-31 12:18:34.861 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 12:18:34.863 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:18:34.864 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 2.5799ms
+2025-01-31 12:18:34.877 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 51
+2025-01-31 12:18:34.878 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:18:34.912 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 12:18:34.914 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 12:18:35.029 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 12:18:35.209 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 12:18:35.212 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 12:18:35.212 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 297.7963ms
+2025-01-31 12:18:35.213 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 12:18:35.214 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 336.9716ms
+2025-01-31 12:34:40.960 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Register - null null
+2025-01-31 12:34:40.961 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:34:40.962 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Register - 204 null null 2.2139ms
+2025-01-31 12:34:41.145 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Register - application/json 111
+2025-01-31 12:34:41.146 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:34:41.148 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Register (carwash)'
+2025-01-31 12:34:41.281 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(carwash.Models.DTO.RegisterRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 12:34:41.497 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-01-31 12:34:41.794 +05:30 [INF] Executed action carwash.Controllers.AuthController.Register (carwash) in 512.1553ms
+2025-01-31 12:34:41.795 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Register (carwash)'
+2025-01-31 12:34:41.796 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Register - 400 null application/problem+json; charset=utf-8 650.7157ms
+2025-01-31 12:36:23.918 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Register - null null
+2025-01-31 12:36:23.919 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:36:23.919 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Register - 204 null null 1.3557ms
+2025-01-31 12:36:24.084 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Register - application/json 117
+2025-01-31 12:36:24.085 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:36:24.085 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Register (carwash)'
+2025-01-31 12:36:24.086 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(carwash.Models.DTO.RegisterRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 12:36:24.090 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-01-31 12:36:24.091 +05:30 [INF] Executed action carwash.Controllers.AuthController.Register (carwash) in 4.5546ms
+2025-01-31 12:36:24.091 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Register (carwash)'
+2025-01-31 12:36:24.091 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Register - 400 null application/problem+json; charset=utf-8 7.2989ms
+2025-01-31 12:45:13.071 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Register - null null
+2025-01-31 12:45:13.073 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:45:13.077 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Register - 204 null null 6.4343ms
+2025-01-31 12:45:13.334 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Register - application/json 120
+2025-01-31 12:45:13.335 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:45:13.336 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Register (carwash)'
+2025-01-31 12:45:13.337 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(carwash.Models.DTO.RegisterRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 12:45:24.231 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser - null null
+2025-01-31 12:45:24.239 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUser (carwash)'
+2025-01-31 12:45:24.240 +05:30 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser() on controller carwash.Controllers.UserController (carwash).
+2025-01-31 12:45:24.531 +05:30 [INF] Executed DbCommand (733ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-01-31 12:45:29.239 +05:30 [INF] Executed DbCommand (2,875ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2025-01-31 12:45:29.893 +05:30 [INF] Executed DbCommand (116ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-01-31 12:45:30.814 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-01-31 12:45:30.933 +05:30 [INF] Executed DbCommand (78ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-01-31 12:45:31.086 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-01-31 12:45:33.132 +05:30 [INF] Executed DbCommand (1,587ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p16='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p17='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+OUTPUT 1
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+2025-01-31 12:45:36.334 +05:30 [INF] Executed DbCommand (1,279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM [Users] AS [u]
+LEFT JOIN [Cars] AS [c] ON [u].[Id] = [c].[CustId]
+ORDER BY [u].[Id]
+2025-01-31 12:45:36.350 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.UserDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-31 12:45:36.351 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUser (carwash) in 12110.1894ms
+2025-01-31 12:45:36.351 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUser (carwash)'
+2025-01-31 12:45:36.352 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser - 200 null application/json; charset=utf-8 12120.9339ms
+2025-01-31 12:45:36.924 +05:30 [INF] Executed DbCommand (683ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [Email], [MobileNumber], [Name], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-01-31 12:45:36.926 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-01-31 12:45:36.931 +05:30 [INF] Executed action carwash.Controllers.AuthController.Register (carwash) in 23592.9848ms
+2025-01-31 12:45:36.931 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Register (carwash)'
+2025-01-31 12:45:36.932 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Register - 200 null text/plain; charset=utf-8 23598.2342ms
+2025-01-31 12:45:57.224 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser - null null
+2025-01-31 12:45:57.225 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUser (carwash)'
+2025-01-31 12:45:57.226 +05:30 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser() on controller carwash.Controllers.UserController (carwash).
+2025-01-31 12:45:57.584 +05:30 [INF] Executed DbCommand (334ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM [Users] AS [u]
+LEFT JOIN [Cars] AS [c] ON [u].[Id] = [c].[CustId]
+ORDER BY [u].[Id]
+2025-01-31 12:45:57.586 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.UserDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-31 12:45:57.587 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUser (carwash) in 360.6412ms
+2025-01-31 12:45:57.587 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUser (carwash)'
+2025-01-31 12:45:57.588 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser - 200 null application/json; charset=utf-8 364.4278ms
+2025-01-31 12:51:55.736 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Register - null null
+2025-01-31 12:51:55.738 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:51:55.739 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Register - 204 null null 2.8956ms
+2025-01-31 12:51:55.862 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Register - application/json 126
+2025-01-31 12:51:55.865 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:51:55.866 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Register (carwash)'
+2025-01-31 12:51:55.866 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(carwash.Models.DTO.RegisterRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 12:52:06.212 +05:30 [INF] Executed DbCommand (452ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-01-31 12:52:07.238 +05:30 [INF] Executed DbCommand (1,011ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2025-01-31 12:52:07.489 +05:30 [INF] Executed DbCommand (249ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-01-31 12:52:07.680 +05:30 [INF] Executed DbCommand (187ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-01-31 12:52:07.783 +05:30 [INF] Executed DbCommand (100ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-01-31 12:52:07.839 +05:30 [INF] Executed DbCommand (53ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-01-31 12:52:08.014 +05:30 [INF] Executed DbCommand (149ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p16='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p17='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+OUTPUT 1
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+2025-01-31 12:52:18.525 +05:30 [INF] Executed DbCommand (683ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [Email], [MobileNumber], [Name], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-01-31 12:52:18.531 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-01-31 12:52:18.537 +05:30 [INF] Executed action carwash.Controllers.AuthController.Register (carwash) in 22669.7378ms
+2025-01-31 12:52:18.543 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Register (carwash)'
+2025-01-31 12:52:18.550 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Register - 200 null text/plain; charset=utf-8 22687.6442ms
+2025-01-31 12:53:07.117 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 12:53:07.120 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:53:07.121 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 3.7042ms
+2025-01-31 12:53:07.220 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 59
+2025-01-31 12:53:07.221 +05:30 [INF] CORS policy execution successful.
+2025-01-31 12:53:07.221 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 12:53:07.222 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 12:53:07.361 +05:30 [INF] Executed DbCommand (130ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 12:53:08.347 +05:30 [INF] Executed DbCommand (72ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 12:53:08.348 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 12:53:08.349 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 1126.8626ms
+2025-01-31 12:53:08.349 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 12:53:08.349 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 1129.6518ms
+2025-01-31 14:35:14.170 +05:30 [INF] User profile is available. Using 'C:\Users\HSRIVAS9\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-31 14:35:14.878 +05:30 [INF] Now listening on: http://localhost:5007
+2025-01-31 14:35:14.893 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-31 14:35:14.896 +05:30 [INF] Hosting environment: Development
+2025-01-31 14:35:14.897 +05:30 [INF] Content root path: C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\case_study\backend
+2025-01-31 14:35:16.598 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-31 14:35:17.537 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 952.6707ms
+2025-01-31 14:35:17.707 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-31 14:35:17.724 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 18.7661ms
+2025-01-31 14:35:18.089 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-31 14:35:19.047 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 959.0876ms
+2025-01-31 14:36:02.460 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 14:36:02.502 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:36:02.510 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 50.2432ms
+2025-01-31 14:36:02.528 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 29
+2025-01-31 14:36:02.545 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:36:02.551 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-31 14:36:02.740 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:36:02.892 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 14:36:04.395 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 29
+2025-01-31 14:36:04.398 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:36:04.405 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:36:04.406 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 14:36:04.499 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-01-31 14:36:04.500 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-01-31 14:36:04.688 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 1774.1205ms
+2025-01-31 14:36:04.688 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 262.4185ms
+2025-01-31 14:36:04.689 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:36:04.689 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:36:04.701 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 400 null application/problem+json; charset=utf-8 305.2856ms
+2025-01-31 14:36:04.706 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 400 null application/problem+json; charset=utf-8 2169.9137ms
+2025-01-31 14:36:18.471 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 14:36:18.472 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:36:18.474 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 3.5251ms
+2025-01-31 14:36:18.480 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 29
+2025-01-31 14:36:18.484 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:36:18.502 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:36:18.503 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 14:36:18.640 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-01-31 14:36:18.643 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 139.7195ms
+2025-01-31 14:36:18.644 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:36:18.647 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 400 null application/problem+json; charset=utf-8 166.7581ms
+2025-01-31 14:36:36.365 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 14:36:36.366 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:36:36.373 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 8.0785ms
+2025-01-31 14:36:36.394 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 51
+2025-01-31 14:36:36.394 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:36:36.396 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:36:36.412 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 14:36:43.934 +05:30 [INF] Executed DbCommand (183ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 14:36:45.090 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 14:36:45.192 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 14:36:45.200 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 8787.1765ms
+2025-01-31 14:36:45.202 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:36:45.239 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 8845.6925ms
+2025-01-31 14:39:08.209 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 14:39:08.210 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:39:08.211 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 2.0963ms
+2025-01-31 14:39:08.276 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 51
+2025-01-31 14:39:08.277 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:39:08.279 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:39:08.280 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 14:39:08.651 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 14:39:09.307 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 14:39:09.313 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 14:39:09.316 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 1034.9692ms
+2025-01-31 14:39:09.318 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:39:09.320 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 1044.0124ms
+2025-01-31 14:40:20.823 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 14:40:20.824 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:40:20.826 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 3.08ms
+2025-01-31 14:40:20.882 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 51
+2025-01-31 14:40:20.883 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:40:20.884 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:40:20.885 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 14:40:21.085 +05:30 [INF] Executed DbCommand (76ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 14:40:21.753 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 14:40:21.756 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 14:40:21.758 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 872.2229ms
+2025-01-31 14:40:21.759 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:40:21.761 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 877.7532ms
+2025-01-31 14:40:57.845 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 14:40:57.846 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:40:57.847 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 1.269ms
+2025-01-31 14:40:57.857 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 51
+2025-01-31 14:40:57.858 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:40:57.859 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:40:57.860 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 14:40:57.872 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 14:40:58.186 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 14:40:58.188 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 14:40:58.189 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 328.3852ms
+2025-01-31 14:40:58.189 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 14:40:58.190 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 332.745ms
+2025-01-31 14:57:55.210 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Register - null null
+2025-01-31 14:57:55.214 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:57:55.217 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Register - 204 null null 6.7925ms
+2025-01-31 14:57:55.267 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Register - application/json 70
+2025-01-31 14:57:55.270 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:57:55.273 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Register (carwash)'
+2025-01-31 14:57:55.301 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(carwash.Models.DTO.RegisterRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 14:57:55.367 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-01-31 14:57:55.369 +05:30 [INF] Executed action carwash.Controllers.AuthController.Register (carwash) in 67.2217ms
+2025-01-31 14:57:55.371 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Register (carwash)'
+2025-01-31 14:57:55.372 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Register - 400 null application/problem+json; charset=utf-8 105.4535ms
+2025-01-31 14:58:25.171 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Register - null null
+2025-01-31 14:58:25.173 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:58:25.176 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Register - 204 null null 5.0745ms
+2025-01-31 14:58:25.187 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Register - application/json 117
+2025-01-31 14:58:25.189 +05:30 [INF] CORS policy execution successful.
+2025-01-31 14:58:25.192 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Register (carwash)'
+2025-01-31 14:58:25.194 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(carwash.Models.DTO.RegisterRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 14:58:25.630 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-01-31 14:58:25.895 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2025-01-31 14:58:25.956 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-01-31 14:58:26.066 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-01-31 14:58:26.076 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-01-31 14:58:26.105 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-01-31 14:58:26.229 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p16='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p17='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+OUTPUT 1
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+2025-01-31 14:58:27.151 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [Email], [MobileNumber], [Name], [Role])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-01-31 14:58:27.154 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-01-31 14:58:27.155 +05:30 [INF] Executed action carwash.Controllers.AuthController.Register (carwash) in 1958.1115ms
+2025-01-31 14:58:27.156 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Register (carwash)'
+2025-01-31 14:58:27.156 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Register - 200 null text/plain; charset=utf-8 1969.422ms
+2025-01-31 15:13:56.276 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 15:13:56.277 +05:30 [INF] CORS policy execution successful.
+2025-01-31 15:13:56.278 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 1.8473ms
+2025-01-31 15:13:56.286 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 51
+2025-01-31 15:13:56.288 +05:30 [INF] CORS policy execution successful.
+2025-01-31 15:13:56.290 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:13:56.291 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 15:13:56.509 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 15:13:56.687 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 15:13:56.690 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 15:13:56.691 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 398.2458ms
+2025-01-31 15:13:56.691 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:13:56.692 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 406.1937ms
+2025-01-31 15:19:27.236 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 15:19:27.240 +05:30 [INF] CORS policy execution successful.
+2025-01-31 15:19:27.241 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 4.7851ms
+2025-01-31 15:19:27.283 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 51
+2025-01-31 15:19:27.289 +05:30 [INF] CORS policy execution successful.
+2025-01-31 15:19:27.291 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:19:27.292 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 15:19:27.321 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 15:19:27.721 +05:30 [INF] Executed DbCommand (60ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 15:19:27.728 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 15:19:27.731 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 438.6453ms
+2025-01-31 15:19:27.732 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:19:27.733 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 449.3143ms
+2025-01-31 15:20:52.229 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 15:20:52.230 +05:30 [INF] CORS policy execution successful.
+2025-01-31 15:20:52.231 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 1.7026ms
+2025-01-31 15:20:52.258 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 59
+2025-01-31 15:20:52.259 +05:30 [INF] CORS policy execution successful.
+2025-01-31 15:20:52.262 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:20:52.263 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 15:20:52.328 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 15:20:52.707 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 15:20:52.751 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 15:20:52.752 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 487.8265ms
+2025-01-31 15:20:52.752 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:20:52.753 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 495.3968ms
+2025-01-31 15:24:46.368 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 15:24:46.380 +05:30 [INF] CORS policy execution successful.
+2025-01-31 15:24:46.385 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 14.7085ms
+2025-01-31 15:24:46.524 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 59
+2025-01-31 15:24:46.525 +05:30 [INF] CORS policy execution successful.
+2025-01-31 15:24:46.526 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:24:46.527 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 15:24:46.560 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 15:24:46.908 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 15:24:46.912 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 15:24:46.914 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 385.0159ms
+2025-01-31 15:24:46.915 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:24:46.916 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 392.5676ms
+2025-01-31 15:25:14.585 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 15:25:14.593 +05:30 [INF] CORS policy execution successful.
+2025-01-31 15:25:14.595 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 10.7678ms
+2025-01-31 15:25:14.695 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 59
+2025-01-31 15:25:14.696 +05:30 [INF] CORS policy execution successful.
+2025-01-31 15:25:14.698 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:25:14.698 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 15:25:14.910 +05:30 [INF] Executed DbCommand (150ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 15:25:15.424 +05:30 [INF] Executed DbCommand (84ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 15:25:15.429 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 15:25:15.429 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 727.9723ms
+2025-01-31 15:25:15.429 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:25:15.430 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 734.5364ms
+2025-01-31 15:34:42.936 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - null null
+2025-01-31 15:34:42.938 +05:30 [INF] CORS policy execution successful.
+2025-01-31 15:34:42.939 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5007/api/Auth/Login - 204 null null 3.1156ms
+2025-01-31 15:34:42.949 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 59
+2025-01-31 15:34:42.951 +05:30 [INF] CORS policy execution successful.
+2025-01-31 15:34:42.957 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:34:42.958 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 15:34:46.287 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 59
+2025-01-31 15:34:46.288 +05:30 [INF] CORS policy execution successful.
+2025-01-31 15:34:46.288 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:34:46.289 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-31 15:34:46.659 +05:30 [INF] Executed DbCommand (64ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 15:34:47.013 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-31 15:34:47.036 +05:30 [INF] Executed DbCommand (141ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 15:34:47.041 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 15:34:47.041 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 4084.0547ms
+2025-01-31 15:34:47.043 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:34:47.044 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 4094.8155ms
+2025-01-31 15:34:47.271 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-31 15:34:47.273 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-31 15:34:47.274 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 984.7061ms
+2025-01-31 15:34:47.274 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-31 15:34:47.275 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 988.0717ms
+2025-01-31 16:15:40.848 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser - null null
+2025-01-31 16:15:40.877 +05:30 [INF] Executing endpoint 'carwash.Controllers.UserController.GetUser (carwash)'
+2025-01-31 16:15:40.898 +05:30 [INF] Route matched with {action = "GetUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser() on controller carwash.Controllers.UserController (carwash).
+2025-01-31 16:15:41.722 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[MobileNumber], [u].[Name], [u].[Role], [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number]
+FROM [Users] AS [u]
+LEFT JOIN [Cars] AS [c] ON [u].[Id] = [c].[CustId]
+ORDER BY [u].[Id]
+2025-01-31 16:15:41.881 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.UserDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-31 16:15:41.918 +05:30 [INF] Executed action carwash.Controllers.UserController.GetUser (carwash) in 1019.5899ms
+2025-01-31 16:15:41.919 +05:30 [INF] Executed endpoint 'carwash.Controllers.UserController.GetUser (carwash)'
+2025-01-31 16:15:41.920 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser - 200 null application/json; charset=utf-8 1072.3405ms
+2025-01-31 16:18:22.063 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser/customers/1/cars - null null
+2025-01-31 16:18:22.067 +05:30 [INF] CORS policy execution successful.
+2025-01-31 16:18:22.069 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser/customers/1/cars - 404 0 null 5.8781ms
+2025-01-31 16:18:22.075 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5007/api/User/GetAllUser/customers/1/cars, Response status code: 404
+2025-01-31 16:20:34.761 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser/customers/1/cars - null null
+2025-01-31 16:20:34.761 +05:30 [INF] CORS policy execution successful.
+2025-01-31 16:20:34.762 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser/customers/1/cars - 404 0 null 0.9609ms
+2025-01-31 16:20:34.762 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5007/api/User/GetAllUser/customers/1/cars, Response status code: 404
+2025-01-31 16:20:53.136 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser/customers/1/cars - null null
+2025-01-31 16:20:53.136 +05:30 [INF] CORS policy execution successful.
+2025-01-31 16:20:53.137 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/User/GetAllUser/customers/1/cars - 404 0 null 1.481ms
+2025-01-31 16:20:53.137 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5007/api/User/GetAllUser/customers/1/cars, Response status code: 404

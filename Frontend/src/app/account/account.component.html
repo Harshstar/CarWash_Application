@@ -1,0 +1,171 @@
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" routerLink="/customer">CarWash</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="navigating()">Request</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="card shadow-lg account-card">
+            <div class="card-header text-dark bg-gradient text-center">
+                <h3>My Account</h3>
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+                    <!-- Left Column: User Details -->
+                    <div class="col-md-6 details-section">
+                        <h5 class="section-title">User Details</h5>
+                        <div class="grid-container">
+                            <div class="grid-item label">Name:</div>
+                            <div class="grid-item value">{{ user.name }}</div>
+
+                            <div class="grid-item label">Email:</div>
+                            <div class="grid-item value">{{ user.email }}</div>
+
+                            <div class="grid-item label">Mobile Number:</div>
+                            <div class="grid-item value">{{ user.mobileNumber }}</div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Address Details -->
+                    <div class="col-md-6 details-section">
+                        <h5 class="section-title">Address Details</h5>
+                        
+                        <div *ngIf="address && address.doorNumber; else addAddressButton">
+                            <div class="grid-container">
+                                <div class="grid-item label">Door No:</div>
+                                <div class="grid-item value">{{ address.doorNumber }}</div>
+
+                                <div class="grid-item label">Street:</div>
+                                <div class="grid-item value">{{ address.street }}</div>
+
+                                <div class="grid-item label">Area:</div>
+                                <div class="grid-item value">{{ address.area }}</div>
+
+                                <div class="grid-item label">Landmark:</div>
+                                <div class="grid-item value">{{ address.landmark }}</div>
+
+                                <div class="grid-item label">City:</div>
+                                <div class="grid-item value">{{ address.city }}</div>
+
+                                <div class="grid-item label">State:</div>
+                                <div class="grid-item value">{{ address.state }}</div>
+
+                                <div class="grid-item label">Pincode:</div>
+                                <div class="grid-item value">{{ address.pincode }}</div>
+                            </div>
+
+                            <button class="btn btn-warning w-100 mt-3" (click)="openUpdateAddressDialog()">Update Address</button>
+                        </div>
+
+                        <!-- If no address, show Add Address button -->
+                        <ng-template #addAddressButton>
+                            <button class="btn btn-primary w-100 mt-3" (click)="openAddAddressDialog()">Add Address</button>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer text-center">
+                <button class="btn btn-danger w-100" (click)="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Address Modal -->
+        <div class="modal fade" id="addAddressModal" tabindex="-1" aria-labelledby="addAddressModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="addAddressModalLabel">Add New Address</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form [formGroup]="addressForm">
+                    <div class="mb-3">
+                      <label for="doorNumber" class="form-label">Door Number</label>
+                      <input type="text" id="doorNumber" class="form-control" formControlName="doorNumber">
+                      <div class="text-danger" *ngIf="addressForm.controls.doorNumber.invalid && addressForm.controls.doorNumber.touched">
+                        Door Number is required
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="street" class="form-label">Street</label>
+                      <input type="text" id="street" class="form-control" formControlName="street">
+                      <div class="text-danger" *ngIf="addressForm.controls.street.invalid && addressForm.controls.street.touched">
+                        Street Name is required
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="area" class="form-label">Area</label>
+                      <input type="text" id="area" class="form-control" formControlName="area">
+                      <div class="text-danger" *ngIf="addressForm.controls.area.invalid && addressForm.controls.area.touched">
+                        Area is required
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="landmark" class="form-label">Landmark</label>
+                      <input type="text" id="landmark" class="form-control" formControlName="landmark">
+                      <div class="text-danger" *ngIf="addressForm.controls.landmark.invalid && addressForm.controls.landmark.touched">
+                        Landmark is required
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="city" class="form-label">City</label>
+                      <input type="text" id="city" class="form-control" formControlName="city">
+                      <div class="text-danger" *ngIf="addressForm.controls.city.invalid && addressForm.controls.city.touched">
+                        City is required
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="state" class="form-label">State</label>
+                      <input type="text" id="state" class="form-control" formControlName="state">
+                      <div class="text-danger" *ngIf="addressForm.controls.state.invalid && addressForm.controls.state.touched">
+                        State is required
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="pincode" class="form-label">Pincode</label>
+                      <input type="text" id="pincode" class="form-control" formControlName="pincode">
+                      <div class="text-danger" *ngIf="addressForm.controls.pincode.invalid && addressForm.controls.pincode.touched">
+                        <span *ngIf="addressForm.controls.pincode.errors?.['required']">Pincode is required</span>
+                        <span *ngIf="addressForm.controls.pincode.errors?.['pattern']">Pincode must be a 6-digit number</span>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-success" (click)="saveAddress()">Save Address</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+
+
+
+    <div class="footer">
+        <p>&copy; 2025 CarWash. All rights reserved.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>

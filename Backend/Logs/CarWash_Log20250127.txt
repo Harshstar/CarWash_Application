@@ -1,0 +1,312 @@
+2025-01-27 11:02:16.399 +05:30 [INF] User profile is available. Using 'C:\Users\HSRIVAS9\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-27 11:02:16.785 +05:30 [INF] Now listening on: http://localhost:5007
+2025-01-27 11:02:16.792 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-27 11:02:16.793 +05:30 [INF] Hosting environment: Development
+2025-01-27 11:02:16.793 +05:30 [INF] Content root path: C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\Copy\carwash\carwash
+2025-01-27 11:02:17.965 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-27 11:02:18.696 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 737.9595ms
+2025-01-27 11:02:18.866 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-27 11:02:18.871 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 6.495ms
+2025-01-27 11:02:19.820 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-27 11:02:20.369 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 549.9015ms
+2025-01-27 11:02:26.899 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Car/GetAllCars - null null
+2025-01-27 11:02:26.915 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-27 11:02:27.040 +05:30 [INF] Executing endpoint 'carwash.Controllers.CarController.GetAlLCars (carwash)'
+2025-01-27 11:02:27.115 +05:30 [INF] Route matched with {action = "GetAlLCars", controller = "Car"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAlLCars() on controller carwash.Controllers.CarController (carwash).
+2025-01-27 11:02:31.970 +05:30 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number], [c0].[Id], [c0].[Age], [c0].[Email], [c0].[FName], [c0].[Gender], [c0].[LName], [c0].[MobileNum]
+FROM [Cars] AS [c]
+INNER JOIN [Customers] AS [c0] ON [c].[CustId] = [c0].[Id]
+2025-01-27 11:02:32.362 +05:30 [INF] Executed action carwash.Controllers.CarController.GetAlLCars (carwash) in 5233.7884ms
+2025-01-27 11:02:32.365 +05:30 [INF] Executed endpoint 'carwash.Controllers.CarController.GetAlLCars (carwash)'
+2025-01-27 11:02:32.370 +05:30 [ERR] 701784ef-b47a-486c-a484-a446625e037c : This is a new exception
+System.Exception: This is a new exception
+   at carwash.Controllers.CarController.GetAlLCars() in C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\Copy\carwash\carwash\Controllers\CarController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at carwash.Middlewares.ExceptionHandlerMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\Copy\carwash\carwash\Middlewares\ExceptionHandlerMiddleware.cs:line 23
+2025-01-27 11:02:32.634 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Car/GetAllCars - 500 null application/json; charset=utf-8 5736.0216ms
+2025-01-27 11:03:27.214 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-27 11:03:27.218 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 4.1315ms
+2025-01-27 11:03:27.340 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-27 11:03:27.341 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.8217ms
+2025-01-27 11:03:27.478 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-27 11:03:27.576 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 98.074ms
+2025-01-27 11:03:32.808 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Car/GetAllCars - null null
+2025-01-27 11:03:32.815 +05:30 [INF] Executing endpoint 'carwash.Controllers.CarController.GetAlLCars (carwash)'
+2025-01-27 11:03:32.867 +05:30 [INF] Route matched with {action = "GetAlLCars", controller = "Car"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAlLCars() on controller carwash.Controllers.CarController (carwash).
+2025-01-27 11:03:33.004 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number], [c0].[Id], [c0].[Age], [c0].[Email], [c0].[FName], [c0].[Gender], [c0].[LName], [c0].[MobileNum]
+FROM [Cars] AS [c]
+INNER JOIN [Customers] AS [c0] ON [c].[CustId] = [c0].[Id]
+2025-01-27 11:03:33.009 +05:30 [INF] Executed action carwash.Controllers.CarController.GetAlLCars (carwash) in 141.4766ms
+2025-01-27 11:03:33.010 +05:30 [INF] Executed endpoint 'carwash.Controllers.CarController.GetAlLCars (carwash)'
+2025-01-27 11:03:33.010 +05:30 [ERR] 5e56eb86-c419-4905-8a6b-e1b97a86ba1e : This is a new exception
+System.Exception: This is a new exception
+   at carwash.Controllers.CarController.GetAlLCars()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at carwash.Middlewares.ExceptionHandlerMiddleware.InvokeAsync(HttpContext httpContext)
+2025-01-27 11:03:33.026 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Car/GetAllCars - 500 null application/json; charset=utf-8 218.1141ms
+2025-01-27 11:04:05.109 +05:30 [INF] Application is shutting down...
+2025-01-27 11:11:22.954 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-27 11:11:26.560 +05:30 [ERR] acb662e2-3c8b-4cc8-b915-1d192c982248 : This is a new exception
+System.Exception: This is a new exception
+   at carwash.Controllers.CarController.GetAlLCars() in C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\Copy\carwash\carwash\Controllers\CarController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at carwash.Middlewares.ExceptionHandlerMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\Copy\carwash\carwash\Middlewares\ExceptionHandlerMiddleware.cs:line 23
+2025-01-27 11:38:44.194 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-27 11:40:29.495 +05:30 [INF] User profile is available. Using 'C:\Users\HSRIVAS9\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-27 11:40:29.869 +05:30 [INF] Now listening on: http://localhost:5007
+2025-01-27 11:40:29.882 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-27 11:40:29.883 +05:30 [INF] Hosting environment: Development
+2025-01-27 11:40:29.884 +05:30 [INF] Content root path: C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\Copy\carwash\carwash
+2025-01-27 11:40:31.065 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-27 11:40:31.492 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 434.601ms
+2025-01-27 11:40:31.551 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-27 11:40:31.562 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 11.092ms
+2025-01-27 11:40:31.962 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-27 11:40:32.241 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 278.3531ms
+2025-01-27 11:42:07.647 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-27 11:42:07.651 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 4.0983ms
+2025-01-27 11:42:07.691 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-27 11:42:07.694 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 2.6843ms
+2025-01-27 11:42:07.768 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-27 11:42:07.772 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 3.2191ms
+2025-01-27 11:42:07.907 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-27 11:42:07.949 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 41.7729ms
+2025-01-27 11:42:17.116 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Car/GetAllCars - null null
+2025-01-27 11:42:17.127 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-27 11:42:17.191 +05:30 [INF] Executing endpoint 'carwash.Controllers.CarController.GetAlLCars (carwash)'
+2025-01-27 11:42:17.238 +05:30 [INF] Route matched with {action = "GetAlLCars", controller = "Car"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAlLCars() on controller carwash.Controllers.CarController (carwash).
+2025-01-27 11:42:22.921 +05:30 [INF] Executed DbCommand (153ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number], [c0].[Id], [c0].[Age], [c0].[Email], [c0].[FName], [c0].[Gender], [c0].[LName], [c0].[MobileNum]
+FROM [Cars] AS [c]
+INNER JOIN [Customers] AS [c0] ON [c].[CustId] = [c0].[Id]
+2025-01-27 11:42:23.413 +05:30 [INF] Executed action carwash.Controllers.CarController.GetAlLCars (carwash) in 6164.9809ms
+2025-01-27 11:42:23.415 +05:30 [INF] Executed endpoint 'carwash.Controllers.CarController.GetAlLCars (carwash)'
+2025-01-27 11:42:23.422 +05:30 [ERR] e7a3858f-8a49-4201-adc8-254498dfa637 : This is a new exception
+System.Exception: This is a new exception
+   at carwash.Controllers.CarController.GetAlLCars()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at carwash.Middlewares.ExceptionHandlerMiddleware.InvokeAsync(HttpContext httpContext)
+2025-01-27 11:42:23.632 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Car/GetAllCars - 500 null application/json; charset=utf-8 6515.9518ms
+2025-01-27 11:54:41.654 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-27 11:54:41.661 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 6.9091ms
+2025-01-27 11:54:41.690 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-27 11:54:41.700 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 9.7208ms
+2025-01-27 11:54:42.200 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-27 11:54:42.211 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 10.9124ms
+2025-01-27 11:54:50.068 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-27 11:54:50.160 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 91.4106ms
+2025-01-27 14:33:16.097 +05:30 [INF] Application is shutting down...
+2025-01-27 14:53:34.528 +05:30 [INF] User profile is available. Using 'C:\Users\HSRIVAS9\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-27 14:53:34.958 +05:30 [INF] Now listening on: http://localhost:5007
+2025-01-27 14:53:34.973 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-27 14:53:34.975 +05:30 [INF] Hosting environment: Development
+2025-01-27 14:53:34.976 +05:30 [INF] Content root path: C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\Copy\carwash\carwash
+2025-01-27 14:53:36.168 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-27 14:53:36.930 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 768.1332ms
+2025-01-27 14:53:37.044 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-27 14:53:37.049 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 8.7975ms
+2025-01-27 14:53:37.626 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-27 14:53:38.642 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1016.0346ms
+2025-01-27 14:53:49.101 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Address/GetAllAddress - null null
+2025-01-27 14:53:49.128 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-27 14:53:49.307 +05:30 [INF] Executing endpoint 'carwash.Controllers.AddressController.GetAllAddressAsync (carwash)'
+2025-01-27 14:53:49.408 +05:30 [INF] Route matched with {action = "GetAllAddress", controller = "Address"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAddressAsync() on controller carwash.Controllers.AddressController (carwash).
+2025-01-27 14:53:54.645 +05:30 [INF] Executed DbCommand (123ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Area], [a].[City], [a].[CustId], [a].[DoorNumber], [a].[Landmark], [a].[Pincode], [a].[State], [a].[Street], [a].[WasherId]
+FROM [Addresses] AS [a]
+2025-01-27 14:53:54.966 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.AddAddressDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-27 14:53:55.159 +05:30 [INF] Executed action carwash.Controllers.AddressController.GetAllAddressAsync (carwash) in 5710.5065ms
+2025-01-27 14:53:55.172 +05:30 [INF] Executed endpoint 'carwash.Controllers.AddressController.GetAllAddressAsync (carwash)'
+2025-01-27 14:53:55.227 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Address/GetAllAddress - 200 null application/json; charset=utf-8 6125.1253ms
+2025-01-27 14:54:11.508 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Washer/GetAllWasherAsync - null null
+2025-01-27 14:54:11.539 +05:30 [INF] Executing endpoint 'carwash.Controllers.WasherController.GetAllWasherAsync (carwash)'
+2025-01-27 14:54:11.616 +05:30 [INF] Route matched with {action = "GetAllWasher", controller = "Washer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllWasherAsync() on controller carwash.Controllers.WasherController (carwash).
+2025-01-27 14:54:12.108 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[Email], [w].[MobileNumber], [w].[Name]
+FROM [Washers] AS [w]
+2025-01-27 14:54:12.250 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.AddWasherDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-27 14:54:12.322 +05:30 [INF] Executed action carwash.Controllers.WasherController.GetAllWasherAsync (carwash) in 704.5756ms
+2025-01-27 14:54:12.326 +05:30 [INF] Executed endpoint 'carwash.Controllers.WasherController.GetAllWasherAsync (carwash)'
+2025-01-27 14:54:12.344 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Washer/GetAllWasherAsync - 200 null application/json; charset=utf-8 835.7496ms
+2025-01-27 14:54:21.100 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Customer/GetAllCustomer - null null
+2025-01-27 14:54:21.126 +05:30 [INF] Executing endpoint 'carwash.Controllers.CustomerController.GetCust (carwash)'
+2025-01-27 14:54:21.225 +05:30 [INF] Route matched with {action = "GetCust", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCust() on controller carwash.Controllers.CustomerController (carwash).
+2025-01-27 14:54:23.718 +05:30 [INF] Executed DbCommand (179ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Age], [c].[Email], [c].[FName], [c].[Gender], [c].[LName], [c].[MobileNum], [c0].[Id], [c0].[Company], [c0].[CustId], [c0].[Model], [c0].[Number]
+FROM [Customers] AS [c]
+LEFT JOIN [Cars] AS [c0] ON [c].[Id] = [c0].[CustId]
+ORDER BY [c].[Id]
+2025-01-27 14:54:24.210 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.CustomerDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-27 14:54:24.267 +05:30 [INF] Executed action carwash.Controllers.CustomerController.GetCust (carwash) in 3039.8904ms
+2025-01-27 14:54:24.269 +05:30 [INF] Executed endpoint 'carwash.Controllers.CustomerController.GetCust (carwash)'
+2025-01-27 14:54:24.418 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Customer/GetAllCustomer - 200 null application/json; charset=utf-8 3183.0203ms
+2025-01-27 14:54:31.763 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Car/GetAllCars - null null
+2025-01-27 14:54:31.764 +05:30 [INF] Executing endpoint 'carwash.Controllers.CarController.GetAlLCars (carwash)'
+2025-01-27 14:54:31.775 +05:30 [INF] Route matched with {action = "GetAlLCars", controller = "Car"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAlLCars() on controller carwash.Controllers.CarController (carwash).
+2025-01-27 14:54:31.957 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number], [c0].[Id], [c0].[Age], [c0].[Email], [c0].[FName], [c0].[Gender], [c0].[LName], [c0].[MobileNum]
+FROM [Cars] AS [c]
+INNER JOIN [Customers] AS [c0] ON [c].[CustId] = [c0].[Id]
+2025-01-27 14:54:32.012 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.CarDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-27 14:54:32.052 +05:30 [INF] Executed action carwash.Controllers.CarController.GetAlLCars (carwash) in 276.8297ms
+2025-01-27 14:54:32.057 +05:30 [INF] Executed endpoint 'carwash.Controllers.CarController.GetAlLCars (carwash)'
+2025-01-27 14:54:32.068 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Car/GetAllCars - 200 null application/json; charset=utf-8 304.6546ms
+2025-01-27 14:55:04.948 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Car/Get-Car-By-Id/f6a1b2c3-d4e5-6789-0123-4abcdef56789 - null null
+2025-01-27 14:55:05.140 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Customer)
+2025-01-27 14:55:05.154 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-01-27 14:55:05.155 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Car/Get-Car-By-Id/f6a1b2c3-d4e5-6789-0123-4abcdef56789 - 401 0 null 206.5934ms
+2025-01-27 14:55:34.870 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Auth/Login - application/json 71
+2025-01-27 14:55:34.876 +05:30 [INF] Executing endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-27 14:55:34.989 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(carwash.Models.DTO.LoginRequestDto) on controller carwash.Controllers.AuthController (carwash).
+2025-01-27 14:55:37.470 +05:30 [INF] Executed DbCommand (90ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-01-27 14:55:38.019 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-27 14:55:38.148 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.LoginResponseDto'.
+2025-01-27 14:55:38.150 +05:30 [INF] Executed action carwash.Controllers.AuthController.Login (carwash) in 3160.141ms
+2025-01-27 14:55:38.150 +05:30 [INF] Executed endpoint 'carwash.Controllers.AuthController.Login (carwash)'
+2025-01-27 14:55:38.152 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Auth/Login - 200 null application/json; charset=utf-8 3281.8076ms
+2025-01-27 14:56:02.582 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Car/Get-Car-By-Id/f6a1b2c3-d4e5-6789-0123-4abcdef56789 - null null
+2025-01-27 14:56:02.860 +05:30 [INF] Executing endpoint 'carwash.Controllers.CarController.GetCarById (carwash)'
+2025-01-27 14:56:02.884 +05:30 [INF] Route matched with {action = "GetCarById", controller = "Car"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarById(System.Guid) on controller carwash.Controllers.CarController (carwash).
+2025-01-27 14:56:03.040 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Company], [c].[CustId], [c].[Model], [c].[Number], [c0].[Id], [c0].[Age], [c0].[Email], [c0].[FName], [c0].[Gender], [c0].[LName], [c0].[MobileNum]
+FROM [Cars] AS [c]
+INNER JOIN [Customers] AS [c0] ON [c].[CustId] = [c0].[Id]
+WHERE [c].[Id] = @__id_0
+2025-01-27 14:56:03.099 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.CarDto'.
+2025-01-27 14:56:03.105 +05:30 [INF] Executed action carwash.Controllers.CarController.GetCarById (carwash) in 219.6658ms
+2025-01-27 14:56:03.107 +05:30 [INF] Executed endpoint 'carwash.Controllers.CarController.GetCarById (carwash)'
+2025-01-27 14:56:03.119 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Car/Get-Car-By-Id/f6a1b2c3-d4e5-6789-0123-4abcdef56789 - 200 null application/json; charset=utf-8 530.9069ms
+2025-01-27 14:59:11.598 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5007/api/Car/add-car - application/json 118
+2025-01-27 14:59:11.603 +05:30 [INF] Executing endpoint 'carwash.Controllers.CarController.AddCarAsync (carwash)'
+2025-01-27 14:59:11.622 +05:30 [INF] Route matched with {action = "AddCar", controller = "Car"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddCarAsync(carwash.Models.DTO.AddCarDto) on controller carwash.Controllers.CarController (carwash).
+2025-01-27 14:59:12.340 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cars] ([Id], [Company], [CustId], [Model], [Number])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-01-27 14:59:12.379 +05:30 [INF] Executing OkObjectResult, writing value of type 'carwash.Models.DTO.AddCarDto'.
+2025-01-27 14:59:12.380 +05:30 [INF] Executed action carwash.Controllers.CarController.AddCarAsync (carwash) in 757.2165ms
+2025-01-27 14:59:12.382 +05:30 [INF] Executed endpoint 'carwash.Controllers.CarController.AddCarAsync (carwash)'
+2025-01-27 14:59:12.385 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5007/api/Car/add-car - 200 null application/json; charset=utf-8 786.9708ms
+2025-01-27 14:59:33.945 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Customer/GetAllCustomer - null null
+2025-01-27 14:59:33.952 +05:30 [INF] Executing endpoint 'carwash.Controllers.CustomerController.GetCust (carwash)'
+2025-01-27 14:59:33.952 +05:30 [INF] Route matched with {action = "GetCust", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCust() on controller carwash.Controllers.CustomerController (carwash).
+2025-01-27 14:59:34.044 +05:30 [INF] Executed DbCommand (76ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Age], [c].[Email], [c].[FName], [c].[Gender], [c].[LName], [c].[MobileNum], [c0].[Id], [c0].[Company], [c0].[CustId], [c0].[Model], [c0].[Number]
+FROM [Customers] AS [c]
+LEFT JOIN [Cars] AS [c0] ON [c].[Id] = [c0].[CustId]
+ORDER BY [c].[Id]
+2025-01-27 14:59:34.062 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.CustomerDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-27 14:59:34.063 +05:30 [INF] Executed action carwash.Controllers.CustomerController.GetCust (carwash) in 110.6085ms
+2025-01-27 14:59:34.064 +05:30 [INF] Executed endpoint 'carwash.Controllers.CustomerController.GetCust (carwash)'
+2025-01-27 14:59:34.064 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Customer/GetAllCustomer - 200 null application/json; charset=utf-8 118.742ms
+2025-01-27 15:00:24.778 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/WashReq/GetAllWashRequestAsync - null null
+2025-01-27 15:00:24.782 +05:30 [INF] Executing endpoint 'carwash.Controllers.WashReqController.GetAllWashRequestAsync (carwash)'
+2025-01-27 15:00:24.799 +05:30 [INF] Route matched with {action = "GetAllWashRequest", controller = "WashReq"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllWashRequestAsync() on controller carwash.Controllers.WashReqController (carwash).
+2025-01-27 15:00:24.955 +05:30 [INF] Executed DbCommand (70ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[AddressId], [w].[CarId], [w].[CustId], [w].[DeliveryDate], [w].[Notes], [w].[OrderedDate], [w].[PackageId], [w].[PickupDate], [w].[WashType], [w].[WasherId], [a].[Id], [a].[Area], [a].[City], [a].[CustId], [a].[DoorNumber], [a].[Landmark], [a].[Pincode], [a].[State], [a].[Street], [a].[WasherId]
+FROM [WashRequests] AS [w]
+INNER JOIN [Addresses] AS [a] ON [w].[AddressId] = [a].[Id]
+2025-01-27 15:00:25.134 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.WashRequestDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-27 15:00:25.177 +05:30 [INF] Executed action carwash.Controllers.WashReqController.GetAllWashRequestAsync (carwash) in 376.7207ms
+2025-01-27 15:00:25.177 +05:30 [INF] Executed endpoint 'carwash.Controllers.WashReqController.GetAllWashRequestAsync (carwash)'
+2025-01-27 15:00:25.178 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/WashReq/GetAllWashRequestAsync - 200 null application/json; charset=utf-8 399.9694ms
+2025-01-27 15:07:08.597 +05:30 [INF] Application is shutting down...
+2025-01-27 15:39:39.920 +05:30 [INF] User profile is available. Using 'C:\Users\HSRIVAS9\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-27 15:39:41.105 +05:30 [INF] Now listening on: http://localhost:5007
+2025-01-27 15:39:41.115 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-27 15:39:41.116 +05:30 [INF] Hosting environment: Development
+2025-01-27 15:39:41.117 +05:30 [INF] Content root path: C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\Copy\carwash\carwash
+2025-01-27 15:39:45.350 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-27 15:39:47.095 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 1671.6017ms
+2025-01-27 15:39:47.434 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-27 15:39:47.444 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 10.8678ms
+2025-01-27 15:39:47.837 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-27 15:39:48.961 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1124.5513ms
+2025-01-27 15:39:53.733 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Address/GetAllAddress - null null
+2025-01-27 15:39:53.777 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-27 15:39:53.931 +05:30 [INF] Executing endpoint 'carwash.Controllers.AddressController.GetAllAddressAsync (carwash)'
+2025-01-27 15:39:54.099 +05:30 [INF] Route matched with {action = "GetAllAddress", controller = "Address"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAddressAsync() on controller carwash.Controllers.AddressController (carwash).
+2025-01-27 15:40:00.152 +05:30 [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Area], [a].[City], [a].[CustId], [a].[DoorNumber], [a].[Landmark], [a].[Pincode], [a].[State], [a].[Street], [a].[WasherId]
+FROM [Addresses] AS [a]
+2025-01-27 15:40:00.540 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.AddAddressDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-27 15:40:00.697 +05:30 [INF] Executed action carwash.Controllers.AddressController.GetAllAddressAsync (carwash) in 6587.451ms
+2025-01-27 15:40:00.699 +05:30 [INF] Executed endpoint 'carwash.Controllers.AddressController.GetAllAddressAsync (carwash)'
+2025-01-27 15:40:00.725 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Address/GetAllAddress - 200 null application/json; charset=utf-8 7000.1849ms
+2025-01-27 15:57:37.291 +05:30 [INF] User profile is available. Using 'C:\Users\HSRIVAS9\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-27 15:57:38.172 +05:30 [INF] Now listening on: http://localhost:5007
+2025-01-27 15:57:38.182 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-27 15:57:38.184 +05:30 [INF] Hosting environment: Development
+2025-01-27 15:57:38.185 +05:30 [INF] Content root path: C:\Users\HSRIVAS9\OneDrive - Capgemini\Desktop\Copy\carwash\carwash\backend
+2025-01-27 15:57:44.291 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/index.html - null null
+2025-01-27 15:57:46.589 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/index.html - 200 null text/html;charset=utf-8 2299.2604ms
+2025-01-27 15:57:46.610 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-27 15:57:46.615 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 5.8656ms
+2025-01-27 15:57:47.079 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2025-01-27 15:57:48.375 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1295.9314ms
+2025-01-27 15:57:57.302 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/Address/GetAllAddress - null null
+2025-01-27 15:57:57.352 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-27 15:57:57.495 +05:30 [INF] Executing endpoint 'carwash.Controllers.AddressController.GetAllAddressAsync (carwash)'
+2025-01-27 15:57:57.738 +05:30 [INF] Route matched with {action = "GetAllAddress", controller = "Address"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAddressAsync() on controller carwash.Controllers.AddressController (carwash).
+2025-01-27 15:58:13.536 +05:30 [INF] Executed DbCommand (462ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Area], [a].[City], [a].[CustId], [a].[DoorNumber], [a].[Landmark], [a].[Pincode], [a].[State], [a].[Street], [a].[WasherId]
+FROM [Addresses] AS [a]
+2025-01-27 15:58:14.584 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[carwash.Models.DTO.AddAddressDto, carwash, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-27 15:58:14.971 +05:30 [INF] Executed action carwash.Controllers.AddressController.GetAllAddressAsync (carwash) in 17211.1275ms
+2025-01-27 15:58:14.975 +05:30 [INF] Executed endpoint 'carwash.Controllers.AddressController.GetAllAddressAsync (carwash)'
+2025-01-27 15:58:15.024 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/Address/GetAllAddress - 200 null application/json; charset=utf-8 17722.0728ms
+2025-01-27 15:58:23.332 +05:30 [INF] Application is shutting down...
